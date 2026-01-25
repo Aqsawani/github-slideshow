@@ -1,20 +1,12 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Users, MapPin, Palette, Code, Sparkles, Target } from 'lucide-react';
+import { Users, MapPin } from 'lucide-react';
 
 const AboutPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const team = [
-    { role: 'Creative Director', icon: Sparkles, description: 'Leading brand vision and creative strategy' },
-    { role: 'UI/UX Designer', icon: Palette, description: 'Crafting intuitive user experiences' },
-    { role: 'Brand Designer', icon: Target, description: 'Building cohesive brand identities' },
-    { role: 'Full-Stack Developer', icon: Code, description: 'Bringing designs to life with code' },
-    { role: 'Frontend Developer', icon: Code, description: 'Creating responsive, beautiful interfaces' }
-  ];
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
@@ -22,8 +14,8 @@ const AboutPage = () => {
       
       {/* Hero Section */}
       <section style={{
-        paddingTop: '160px',
-        paddingBottom: '80px',
+        paddingTop: '120px',
+        paddingBottom: '40px',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -32,7 +24,7 @@ const AboutPage = () => {
         <div className="floating-orb" style={{ width: '300px', height: '300px', bottom: '10%', right: '-5%', animationDelay: '-5s' }}></div>
 
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <div style={{
               display: 'inline-block',
               padding: '8px 20px',
@@ -70,7 +62,7 @@ const AboutPage = () => {
       </section>
 
       {/* Location Section */}
-      <section style={{ padding: '60px 0', background: 'var(--bg-card)' }}>
+      <section style={{ padding: '50px 0', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{
             display: 'flex',
@@ -127,11 +119,11 @@ const AboutPage = () => {
       </section>
 
       {/* Our Story Section */}
-      <section style={{ padding: '100px 0' }}>
+      <section style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: '60px',
             alignItems: 'center'
           }}>
@@ -223,96 +215,10 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section style={{ padding: '100px 0', background: 'var(--bg-card)' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{
-              fontSize: 'clamp(2rem, 4vw, 2.5rem)',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              marginBottom: '16px'
-            }}>
-              Meet Our <span style={{ color: 'var(--brand-primary)' }}>Team</span>
-            </h2>
-            <p style={{
-              color: 'var(--text-secondary)',
-              fontSize: '1.1rem',
-              maxWidth: '500px',
-              margin: '0 auto'
-            }}>
-              5 passionate creatives dedicated to elevating your brand
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '24px'
-          }}>
-            {team.map((member, index) => {
-              const Icon = member.icon;
-              return (
-                <div
-                  key={index}
-                  data-testid={`team-member-${index}`}
-                  style={{
-                    background: 'var(--bg-page)',
-                    border: '1px solid var(--border-medium)',
-                    borderRadius: '16px',
-                    padding: '32px 24px',
-                    textAlign: 'center',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-8px)';
-                    e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.5)';
-                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 163, 168, 0.15)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.borderColor = 'var(--border-medium)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <div style={{
-                    width: '70px',
-                    height: '70px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, rgba(0, 163, 168, 0.2) 0%, rgba(0, 163, 168, 0.1) 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 20px'
-                  }}>
-                    <Icon size={32} color="var(--brand-primary)" />
-                  </div>
-                  <h4 style={{
-                    color: 'var(--text-primary)',
-                    fontSize: '1.1rem',
-                    fontWeight: '600',
-                    marginBottom: '8px'
-                  }}>
-                    {member.role}
-                  </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.5'
-                  }}>
-                    {member.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Values Section */}
-      <section style={{ padding: '100px 0' }}>
+      <section style={{ padding: '80px 0', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: '700',
@@ -337,9 +243,18 @@ const AboutPage = () => {
                 key={index}
                 style={{
                   padding: '40px',
-                  background: 'linear-gradient(135deg, rgba(0, 163, 168, 0.08) 0%, transparent 100%)',
+                  background: 'var(--bg-page)',
                   border: '1px solid rgba(0, 163, 168, 0.2)',
-                  borderRadius: '16px'
+                  borderRadius: '16px',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-5px)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.2)';
                 }}
               >
                 <div style={{
