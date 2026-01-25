@@ -80,10 +80,58 @@ const Footer = () => {
               flexDirection: 'column',
               gap: '12px'
             }}>
-              <li><a href="#services" className="nav-link" style={{ padding: 0 }}>Logo Design</a></li>
-              <li><a href="#services" className="nav-link" style={{ padding: 0 }}>Brand Identity</a></li>
-              <li><a href="#services" className="nav-link" style={{ padding: 0 }}>Web Development</a></li>
-              <li><a href="#services" className="nav-link" style={{ padding: 0 }}>SEO & Performance</a></li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/services/logo-design');
+                    window.scrollTo(0, 0);
+                  }}
+                  className="nav-link" 
+                  style={{ padding: 0, cursor: 'pointer' }}
+                >
+                  Logo Design
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/services/brand-identity');
+                    window.scrollTo(0, 0);
+                  }}
+                  className="nav-link" 
+                  style={{ padding: 0, cursor: 'pointer' }}
+                >
+                  Brand Identity
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/services/web-development');
+                    window.scrollTo(0, 0);
+                  }}
+                  className="nav-link" 
+                  style={{ padding: 0, cursor: 'pointer' }}
+                >
+                  Web Development
+                </a>
+              </li>
+              <li>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/services/seo-performance');
+                    window.scrollTo(0, 0);
+                  }}
+                  className="nav-link" 
+                  style={{ padding: 0, cursor: 'pointer' }}
+                >
+                  SEO & Performance
+                </a>
+              </li>
             </ul>
           </div>
 
