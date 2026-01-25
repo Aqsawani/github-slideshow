@@ -25,7 +25,7 @@ Build a modern, professional agency website for "Ozilum" - a design and digital 
    - Process timeline with scroll-triggered animations
    - Client logo carousel (infinite sliding, 12 logos)
    - Testimonials section
-   - Contact form (visual only, backend pending)
+   - Contact form with WhatsApp field (connected to email)
    - Footer with Australian flags (Australian, Aboriginal, Torres Strait Islander)
 
 2. **Service Pages (6 total):**
@@ -40,12 +40,22 @@ Build a modern, professional agency website for "Ozilum" - a design and digital 
    - Company introduction: Melbourne-based agency
    - Team info: 5 designers and developers
    - Company story and values sections
-   - Team roles showcase
+   - "Why OZlume?" explanation (OZ + LUME)
 
 4. **Work Page (`/work`):**
-   - Portfolio redirect to Instagram (@ozilum_)
+   - Portfolio redirect to Instagram (@ozlumeau)
    - Instagram CTA button
-   - Project statistics (50+ projects, 30+ clients, 5 years)
+   - Project statistics (150+ projects, 120+ clients, 5 years)
+
+5. **Contact Form Integration:**
+   - Backend `/api/contact` endpoint
+   - Email notifications via Resend to aqsakhursheed135@gmail.com
+   - Submissions stored in MongoDB
+
+6. **Branding:**
+   - Official logo with glow effect in header and footer
+   - Contact: contact@ozlume.com, 0452 039 863 (WhatsApp)
+   - Social icons: Instagram (linked), GitHub, Pinterest (display only)
 
 3. **Design & Animations:**
    - Glass-morphism effects
