@@ -51,7 +51,9 @@ const Portfolio = () => {
     <section id="work" ref={sectionRef} style={{
       background: 'var(--gradient-dark)',
       padding: '120px 40px',
-      position: 'relative'
+      position: 'relative',
+      overflow: 'hidden',
+      width: '100%'
     }}>
       <div className="container" style={{
         maxWidth: '1400px',
