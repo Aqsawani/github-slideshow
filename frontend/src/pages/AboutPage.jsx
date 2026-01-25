@@ -203,7 +203,7 @@ const AboutPage = () => {
                 fontSize: '1.1rem',
                 lineHeight: '1.8'
               }}>
-                <strong style={{ color: 'var(--text-primary)' }}>ILUM</strong> (from "illuminate") reflects 
+                <strong style={{ color: 'var(--text-primary)' }}>LUME</strong> (from "illuminate") reflects 
                 our mission to bring light and clarity to your brand's vision.
               </p>
             </div>
