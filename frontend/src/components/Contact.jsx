@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import { toast } from 'sonner';
 
 const Contact = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    whatsapp: '',
     company: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,44 +19,73 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Frontend validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
+    if (!formData.name || !formData.email || !formData.whatsapp || !formData.message) {
+      toast.error("Please fill in all required fields.");
       return;
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
+      toast.error("Please enter a valid email address.");
       return;
     }
 
-    // Mock submission (frontend only)
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours."
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
+    // WhatsApp number validation (basic)
+    const phoneRegex = /^[\d\s\-+()]{8,}$/;
+    if (!phoneRegex.test(formData.whatsapp)) {
+      toast.error("Please enter a valid WhatsApp number.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Message Sent! We'll get back to you within 24 hours.");
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          whatsapp: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        toast.error(data.detail || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: '16px',
+    background: 'var(--bg-card)',
+    border: '1px solid var(--border-medium)',
+    borderRadius: '8px',
+    color: 'var(--text-primary)',
+    fontSize: '1rem',
+    fontFamily: 'Inter, Arial, sans-serif',
+    transition: 'border-color 0.3s ease'
   };
 
   return (
@@ -78,7 +108,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} style={{
+        <form onSubmit={handleSubmit} data-testid="contact-form" style={{
           display: 'flex',
           flexDirection: 'column',
           gap: '24px'
@@ -104,17 +134,8 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                style={{
-                  width: '100%',
-                  padding: '16px',
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border-medium)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontSize: '1rem',
-                  fontFamily: 'Inter, Arial, sans-serif',
-                  transition: 'border-color 0.3s ease'
-                }}
+                data-testid="contact-name"
+                style={inputStyle}
                 onFocus={(e) => e.target.style.borderColor = 'var(--brand-primary)'}
                 onBlur={(e) => e.target.style.borderColor = 'var(--border-medium)'}
               />
@@ -135,52 +156,63 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                style={{
-                  width: '100%',
-                  padding: '16px',
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border-medium)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontSize: '1rem',
-                  fontFamily: 'Inter, Arial, sans-serif',
-                  transition: 'border-color 0.3s ease'
-                }}
+                data-testid="contact-email"
+                style={inputStyle}
                 onFocus={(e) => e.target.style.borderColor = 'var(--brand-primary)'}
                 onBlur={(e) => e.target.style.borderColor = 'var(--border-medium)'}
               />
             </div>
           </div>
 
-          <div>
-            <label style={{
-              display: 'block',
-              marginBottom: '8px',
-              color: 'var(--text-secondary)',
-              fontSize: '0.9rem',
-              fontWeight: '600'
-            }}>
-              Company
-            </label>
-            <input
-              type="text"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              style={{
-                width: '100%',
-                padding: '16px',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border-medium)',
-                borderRadius: '8px',
-                color: 'var(--text-primary)',
-                fontSize: '1rem',
-                fontFamily: 'Inter, Arial, sans-serif',
-                transition: 'border-color 0.3s ease'
-              }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--brand-primary)'}
-              onBlur={(e) => e.target.style.borderColor = 'var(--border-medium)'}
-            />
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '24px'
+          }}>
+            <div>
+              <label style={{
+                display: 'block',
+                marginBottom: '8px',
+                color: 'var(--text-secondary)',
+                fontSize: '0.9rem',
+                fontWeight: '600'
+              }}>
+                WhatsApp Number *
+              </label>
+              <input
+                type="tel"
+                name="whatsapp"
+                value={formData.whatsapp}
+                onChange={handleChange}
+                required
+                placeholder="+61 XXX XXX XXX"
+                data-testid="contact-whatsapp"
+                style={inputStyle}
+                onFocus={(e) => e.target.style.borderColor = 'var(--brand-primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border-medium)'}
+              />
+            </div>
+            <div>
+              <label style={{
+                display: 'block',
+                marginBottom: '8px',
+                color: 'var(--text-secondary)',
+                fontSize: '0.9rem',
+                fontWeight: '600'
+              }}>
+                Company
+              </label>
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                data-testid="contact-company"
+                style={inputStyle}
+                onFocus={(e) => e.target.style.borderColor = 'var(--brand-primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border-medium)'}
+              />
+            </div>
           </div>
 
           <div>
@@ -199,17 +231,10 @@ const Contact = () => {
               onChange={handleChange}
               required
               rows="6"
+              data-testid="contact-message"
               style={{
-                width: '100%',
-                padding: '16px',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border-medium)',
-                borderRadius: '8px',
-                color: 'var(--text-primary)',
-                fontSize: '1rem',
-                fontFamily: 'Inter, Arial, sans-serif',
-                resize: 'vertical',
-                transition: 'border-color 0.3s ease'
+                ...inputStyle,
+                resize: 'vertical'
               }}
               onFocus={(e) => e.target.style.borderColor = 'var(--brand-primary)'}
               onBlur={(e) => e.target.style.borderColor = 'var(--border-medium)'}
@@ -218,17 +243,21 @@ const Contact = () => {
 
           <button
             type="submit"
+            disabled={isSubmitting}
             className="btn-primary"
+            data-testid="contact-submit"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '8px',
               width: '100%',
-              marginTop: '16px'
+              marginTop: '16px',
+              opacity: isSubmitting ? 0.7 : 1,
+              cursor: isSubmitting ? 'not-allowed' : 'pointer'
             }}
           >
-            Send Message
+            {isSubmitting ? 'Sending...' : 'Send Message'}
             <Send size={18} />
           </button>
         </form>
