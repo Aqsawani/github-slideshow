@@ -1,30 +1,36 @@
 :root {
   /* Backgrounds - Ozilum Colors */
-  --bg-page: #1a1c1b;
-  --bg-card: #2a2d2c;
+  --bg-page: #0a0b0a;
+  --bg-card: #1a1d1b;
+  --bg-elevated: #232726;
   --bg-light: #f5f5f5;
   
   /* Text - Ozilum Colors */
   --text-primary: #00A3A8;
   --text-secondary: #D3D3D3;
   --text-muted: #888888;
-  --text-inverse: #1a1c1b;
+  --text-inverse: #0a0b0a;
   
   /* Borders - Ozilum Colors */
-  --border-light: rgba(0, 163, 168, 0.2);
-  --border-medium: rgba(0, 163, 168, 0.3);
+  --border-light: rgba(0, 163, 168, 0.1);
+  --border-medium: rgba(0, 163, 168, 0.2);
   --border-strong: #00A3A8;
   
   /* MAIN BRAND COLORS - Ozilum Teal */
   --brand-primary: #00A3A8;
   --brand-hover: rgba(0, 163, 168, 0.85);
   --brand-active: rgba(0, 163, 168, 0.7);
+  --brand-glow: rgba(0, 163, 168, 0.4);
   
   /* Supporting Colors */
   --secondary-gray: #D3D3D3;
   --accent-teal: #00A3A8;
   --neutral-white: #FFFFFF;
   --neutral-light: #f5f5f5;
+  
+  /* Gradients */
+  --gradient-teal: linear-gradient(135deg, rgba(0, 163, 168, 0.1) 0%, rgba(0, 163, 168, 0.05) 100%);
+  --gradient-dark: linear-gradient(180deg, #0a0b0a 0%, #1a1d1b 100%);
 }
 
 * {
