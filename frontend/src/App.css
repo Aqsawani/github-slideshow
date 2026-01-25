@@ -353,12 +353,50 @@ html {
 /* Smooth transitions */
 .card-hover-effect {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 163, 168, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.card-hover-effect:hover::before {
+  left: 100%;
 }
 
 .card-hover-effect:hover {
-  background-color: var(--border-medium);
+  background: var(--bg-elevated) !important;
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 163, 168, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 163, 168, 0.2), 0 0 40px rgba(0, 163, 168, 0.1);
+  border-color: var(--brand-primary) !important;
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(26, 29, 27, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 163, 168, 0.2);
+}
+
+/* Glow effect */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(0, 163, 168, 0.3);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #00A3A8 0%, #00d4db 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Smooth scroll reveal */
