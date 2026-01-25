@@ -1,31 +1,30 @@
 :root {
-  /* Backgrounds - Pixel Pushers Colors */
+  /* Backgrounds - Ozilum Colors */
   --bg-page: #1a1c1b;
-  --bg-card: #302f2c;
-  --bg-light: #dfddd6;
+  --bg-card: #2a2d2c;
+  --bg-light: #f5f5f5;
   
-  /* Text - Pixel Pushers Colors */
-  --text-primary: #d9fb06;
-  --text-secondary: #888680;
-  --text-muted: #302f2c;
+  /* Text - Ozilum Colors */
+  --text-primary: #00A3A8;
+  --text-secondary: #D3D3D3;
+  --text-muted: #888888;
   --text-inverse: #1a1c1b;
   
-  /* Borders - Pixel Pushers Colors */
-  --border-light: rgba(63, 72, 22, 0.5);
-  --border-medium: #3f4816;
-  --border-strong: #888680;
+  /* Borders - Ozilum Colors */
+  --border-light: rgba(0, 163, 168, 0.2);
+  --border-medium: rgba(0, 163, 168, 0.3);
+  --border-strong: #00A3A8;
   
-  /* MAIN BRAND COLORS */
-  --brand-primary: #d9fb06;
-  --brand-hover: rgba(217, 251, 6, 0.8);
-  --brand-active: rgba(217, 251, 6, 0.6);
+  /* MAIN BRAND COLORS - Ozilum Teal */
+  --brand-primary: #00A3A8;
+  --brand-hover: rgba(0, 163, 168, 0.85);
+  --brand-active: rgba(0, 163, 168, 0.7);
   
   /* Supporting Colors */
-  --secondary-olive: #3f4816;
-  --secondary-yellow: #f8d47a;
-  --secondary-blue: #0073e6;
-  --neutral-white: white;
-  --neutral-light: #dfddd6;
+  --secondary-gray: #D3D3D3;
+  --accent-teal: #00A3A8;
+  --neutral-white: #FFFFFF;
+  --neutral-light: #f5f5f5;
 }
 
 * {
