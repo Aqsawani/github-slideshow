@@ -170,12 +170,13 @@ const Clients = () => {
 
         @media (max-width: 767px) {
           .client-logo-container {
-            width: 150px !important;
-            height: 100px !important;
+            width: 220px !important;
+            height: 140px !important;
+            padding: 25px !important;
           }
 
           .clients-track {
-            gap: 40px !important;
+            gap: 50px !important;
             animation: slide 20s linear infinite !important;
           }
         }
