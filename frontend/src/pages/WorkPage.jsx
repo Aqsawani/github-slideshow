@@ -9,14 +9,14 @@ const WorkPage = () => {
     
     // Load Behold widget script
     const script = document.createElement('script');
-    script.src = 'https://w.behold.so/widget.js';
-    script.type = 'module';
+    script.src = 'https://cdn.behold.so/widget.js';
     script.async = true;
+    script.setAttribute('data-feed', 'pah5R7ZNuCxnnq1j3bld');
     document.body.appendChild(script);
     
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://w.behold.so/widget.js"]');
+      const existingScript = document.querySelector('script[src="https://cdn.behold.so/widget.js"]');
       if (existingScript) {
         existingScript.remove();
       }
