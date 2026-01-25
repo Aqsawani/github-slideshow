@@ -71,7 +71,9 @@ const Services = () => {
     <section id="services" ref={sectionRef} style={{
       background: 'var(--bg-page)',
       padding: '120px 40px',
-      position: 'relative'
+      position: 'relative',
+      overflow: 'hidden',
+      width: '100%'
     }}>
       {/* Background decoration */}
       <div style={{
@@ -84,7 +86,8 @@ const Services = () => {
         background: 'radial-gradient(circle, rgba(0, 163, 168, 0.05) 0%, transparent 70%)',
         borderRadius: '50%',
         filter: 'blur(100px)',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        maxWidth: '90vw'
       }} />
 
       <div className="container" style={{
