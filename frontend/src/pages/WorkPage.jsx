@@ -6,21 +6,6 @@ import { Instagram, ExternalLink, ArrowRight } from 'lucide-react';
 const WorkPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    // Load Behold widget script
-    const script = document.createElement('script');
-    script.src = 'https://cdn.behold.so/widget.js';
-    script.async = true;
-    script.setAttribute('data-feed', 'pah5R7ZNuCxnnq1j3bld');
-    document.body.appendChild(script);
-    
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://cdn.behold.so/widget.js"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
   }, []);
 
   const instagramUrl = 'https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr';
