@@ -97,7 +97,7 @@ const WhyChoose = () => {
             Why Choose Us
           </div>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Why Choose Ozilum
+            Why Choose OZlume
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
             We don't just deliver projects — we build partnerships.
