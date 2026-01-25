@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, MapPin, Linkedin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Instagram, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -48,15 +48,7 @@ const Footer = () => {
               display: 'flex',
               gap: '16px'
             }}>
-              <a href="#" style={{
-                color: 'var(--text-secondary)',
-                transition: 'color 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.target.style.color = 'var(--brand-primary)'}
-              onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}>
-                <Linkedin size={20} />
-              </a>
-              <a href="#" style={{
+              <a href="https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style={{
                 color: 'var(--text-secondary)',
                 transition: 'color 0.3s ease'
               }}
@@ -166,8 +158,19 @@ const Footer = () => {
                 color: 'var(--text-secondary)'
               }}>
                 <Mail size={18} />
-                <a href="mailto:hello@ozilum.com.au" className="nav-link" style={{ padding: 0 }}>
-                  hello@ozilum.com.au
+                <a href="mailto:contact@ozlume.com" className="nav-link" style={{ padding: 0 }}>
+                  contact@ozlume.com
+                </a>
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                color: 'var(--text-secondary)'
+              }}>
+                <Phone size={18} />
+                <a href="https://wa.me/61452039863" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ padding: 0 }}>
+                  0452 039 863 (WhatsApp)
                 </a>
               </div>
               <div style={{
@@ -177,7 +180,7 @@ const Footer = () => {
                 color: 'var(--text-secondary)'
               }}>
                 <MapPin size={18} />
-                <span>Australia</span>
+                <span>Melbourne, Australia</span>
               </div>
             </div>
           </div>
