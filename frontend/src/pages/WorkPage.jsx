@@ -8,7 +8,7 @@ const WorkPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const instagramUrl = 'https://www.instagram.com/ozilum_';
+  const instagramUrl = 'https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr';
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
@@ -107,7 +107,7 @@ const WorkPage = () => {
                 fontWeight: '700',
                 marginBottom: '12px'
               }}>
-                @ozilum_
+                @ozlumeau
               </h2>
 
               <p style={{

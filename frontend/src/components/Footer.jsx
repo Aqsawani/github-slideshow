@@ -30,7 +30,7 @@ const Footer = () => {
             }}>
               <img 
                 src="/images/ozilum-logo.png" 
-                alt="Ozilum - Elevating Brands The OZ Way"
+                alt="OZlume - Elevating Brands The OZ Way"
                 data-testid="footer-logo"
                 style={{
                   height: '60px',
@@ -194,7 +194,7 @@ const Footer = () => {
           gap: '20px'
         }}>
           <p className="body-small" style={{ margin: 0 }}>
-            © {currentYear} Ozilum. All rights reserved.
+            © {currentYear} OZlume. All rights reserved.
           </p>
           
           {/* Australian Flags */}
