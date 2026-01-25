@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, MapPin, Linkedin, Instagram } from 'lucide-react';
-import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,7 +28,15 @@ const Footer = () => {
             <div style={{
               marginBottom: '16px'
             }}>
-              <Logo size="large" />
+              <img 
+                src="/images/ozilum-logo.png" 
+                alt="Ozilum - Elevating Brands The OZ Way"
+                data-testid="footer-logo"
+                style={{
+                  height: '60px',
+                  width: 'auto'
+                }}
+              />
             </div>
             <p className="body-small" style={{
               marginBottom: '24px',

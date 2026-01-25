@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import Logo from './Logo';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,13 +38,24 @@ const Header = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: scrolled ? '15px 40px' : '20px 40px',
+        padding: scrolled ? '10px 40px' : '15px 40px',
         maxWidth: '1400px',
         margin: '0 auto',
         transition: 'padding 0.3s ease'
       }}>
         {/* Logo */}
-        <Logo size="medium" onClick={() => scrollToSection('home')} />
+        <img 
+          src="/images/ozilum-logo.png" 
+          alt="Ozilum - Elevating Brands The OZ Way"
+          onClick={() => scrollToSection('home')}
+          data-testid="header-logo"
+          style={{
+            height: scrolled ? '45px' : '55px',
+            width: 'auto',
+            cursor: 'pointer',
+            transition: 'height 0.3s ease'
+          }}
+        />
 
         {/* Desktop Navigation */}
         <div style={{
@@ -67,6 +77,7 @@ const Header = () => {
         <button
           className="mobile-menu-btn"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          data-testid="mobile-menu-btn"
           style={{
             display: 'none',
             background: 'transparent',
@@ -85,7 +96,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="mobile-menu fade-in" style={{
+        <div className="mobile-menu fade-in" data-testid="mobile-menu" style={{
           display: 'none',
           flexDirection: 'column',
           gap: '16px',
