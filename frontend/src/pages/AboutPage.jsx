@@ -14,8 +14,8 @@ const AboutPage = () => {
       
       {/* Hero Section */}
       <section style={{
-        paddingTop: '120px',
-        paddingBottom: '40px',
+        paddingTop: '100px',
+        paddingBottom: '30px',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -24,7 +24,7 @@ const AboutPage = () => {
         <div className="floating-orb" style={{ width: '300px', height: '300px', bottom: '10%', right: '-5%', animationDelay: '-5s' }}></div>
 
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '20px' }}>
             <div style={{
               display: 'inline-block',
               padding: '8px 20px',
