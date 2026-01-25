@@ -6,6 +6,21 @@ import { Instagram, ExternalLink, ArrowRight } from 'lucide-react';
 const WorkPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Load Behold widget script
+    const script = document.createElement('script');
+    script.src = 'https://w.behold.so/widget.js';
+    script.type = 'module';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://w.behold.so/widget.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   const instagramUrl = 'https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr';
@@ -16,19 +31,11 @@ const WorkPage = () => {
       
       {/* Hero Section */}
       <section style={{
-        paddingTop: '160px',
-        paddingBottom: '100px',
+        paddingTop: '120px',
+        paddingBottom: '60px',
         position: 'relative',
-        overflow: 'hidden',
-        minHeight: '80vh',
-        display: 'flex',
-        alignItems: 'center'
+        overflow: 'hidden'
       }}>
-        {/* Floating Orbs */}
-        <div className="floating-orb" style={{ width: '500px', height: '500px', top: '5%', left: '-15%' }}></div>
-        <div className="floating-orb" style={{ width: '400px', height: '400px', bottom: '5%', right: '-10%', animationDelay: '-5s' }}></div>
-        <div className="floating-orb" style={{ width: '250px', height: '250px', top: '40%', right: '20%', animationDelay: '-10s' }}></div>
-
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1, width: '100%' }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{
@@ -58,139 +65,124 @@ const WorkPage = () => {
               fontSize: '1.25rem',
               color: 'var(--text-secondary)',
               maxWidth: '600px',
-              margin: '0 auto 50px',
+              margin: '0 auto 30px',
               lineHeight: '1.6'
             }}>
-              Explore our latest projects and creative work on Instagram. We showcase our brand designs, 
-              logo creations, and web development projects.
+              Explore our latest projects and creative work. Our portfolio updates automatically from Instagram.
             </p>
 
-            {/* Instagram CTA Card */}
-            <div style={{
-              maxWidth: '500px',
-              margin: '0 auto',
-              background: 'linear-gradient(135deg, rgba(0, 163, 168, 0.15) 0%, rgba(0, 163, 168, 0.05) 100%)',
-              border: '1px solid rgba(0, 163, 168, 0.3)',
-              borderRadius: '24px',
-              padding: '50px 40px',
-              position: 'relative',
-              overflow: 'hidden'
-            }}>
-              {/* Decorative gradient */}
-              <div style={{
-                position: 'absolute',
-                top: '-100px',
-                right: '-100px',
-                width: '250px',
-                height: '250px',
-                background: 'radial-gradient(circle, rgba(0, 163, 168, 0.3) 0%, transparent 70%)',
-                borderRadius: '50%'
-              }}></div>
-
-              <div style={{
-                width: '100px',
-                height: '100px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #E1306C 0%, #F77737 50%, #FCAF45 100%)',
-                display: 'flex',
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 30px',
-                boxShadow: '0 10px 40px rgba(225, 48, 108, 0.4)'
-              }}>
-                <Instagram size={50} color="white" />
-              </div>
-
-              <h2 style={{
-                color: 'var(--text-primary)',
-                fontSize: '1.5rem',
-                fontWeight: '700',
-                marginBottom: '12px'
-              }}>
-                @ozlumeau
-              </h2>
-
-              <p style={{
-                color: 'var(--text-secondary)',
+                gap: '8px',
+                padding: '12px 24px',
+                background: 'linear-gradient(135deg, #E1306C 0%, #F77737 50%, #FCAF45 100%)',
+                color: 'white',
                 fontSize: '1rem',
-                marginBottom: '30px',
-                lineHeight: '1.6'
-              }}>
-                Follow us for daily inspiration, behind-the-scenes content, and our latest design work.
-              </p>
-
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="instagram-link"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  padding: '16px 32px',
-                  background: 'linear-gradient(135deg, #E1306C 0%, #F77737 50%, #FCAF45 100%)',
-                  color: 'white',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  borderRadius: '50px',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 20px rgba(225, 48, 108, 0.4)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(225, 48, 108, 0.5)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(225, 48, 108, 0.4)';
-                }}
-              >
-                Visit Our Instagram
-                <ExternalLink size={20} />
-              </a>
-            </div>
-
-            {/* Additional Info */}
-            <div style={{
-              marginTop: '80px',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '32px',
-              maxWidth: '800px',
-              margin: '80px auto 0'
-            }}>
-              {[
-                { number: '150+', label: 'Projects Completed' },
-                { number: '120+', label: 'Happy Clients' },
-                { number: '5', label: 'Years Experience' }
-              ].map((stat, index) => (
-                <div key={index} style={{ textAlign: 'center' }}>
-                  <div style={{
-                    fontSize: '3rem',
-                    fontWeight: '800',
-                    color: 'var(--brand-primary)',
-                    lineHeight: '1'
-                  }}>
-                    {stat.number}
-                  </div>
-                  <div style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '1rem',
-                    marginTop: '8px'
-                  }}>
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+                fontWeight: '600',
+                borderRadius: '50px',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                marginBottom: '20px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(225, 48, 108, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <Instagram size={20} />
+              Follow @ozlumeau
+              <ExternalLink size={16} />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Services CTA */}
-      <section style={{ padding: '80px 0', background: 'var(--bg-card)' }}>
+      {/* Instagram Feed Section */}
+      <section style={{
+        padding: '40px 40px 80px',
+        background: 'var(--bg-card)'
+      }}>
+        <div className="container" style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <h2 style={{
+              fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              marginBottom: '12px'
+            }}>
+              Latest Projects
+            </h2>
+            <p style={{
+              color: 'var(--text-secondary)',
+              fontSize: '1rem'
+            }}>
+              Fresh from our Instagram feed
+            </p>
+          </div>
+          
+          {/* Behold Instagram Feed Widget */}
+          <div 
+            data-testid="instagram-feed"
+            style={{
+              borderRadius: '16px',
+              overflow: 'hidden',
+              background: 'var(--bg-page)',
+              padding: '20px'
+            }}
+          >
+            <behold-widget feed-id="pah5R7ZNuCxnnq1j3bld"></behold-widget>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section style={{ padding: '80px 40px', background: 'var(--bg-page)' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '32px',
+            maxWidth: '800px',
+            margin: '0 auto'
+          }}>
+            {[
+              { number: '150+', label: 'Projects Completed' },
+              { number: '120+', label: 'Happy Clients' },
+              { number: '5', label: 'Years Experience' }
+            ].map((stat, index) => (
+              <div key={index} style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '800',
+                  color: 'var(--brand-primary)',
+                  lineHeight: '1'
+                }}>
+                  {stat.number}
+                </div>
+                <div style={{
+                  color: 'var(--text-secondary)',
+                  fontSize: '1rem',
+                  marginTop: '8px'
+                }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section style={{ padding: '80px 40px', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', textAlign: 'center' }}>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2rem)',
