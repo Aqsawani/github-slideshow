@@ -27,14 +27,7 @@ const Footer = () => {
             <div style={{
               marginBottom: '16px'
             }}>
-              <img 
-                src="/ozilum-logo.jpeg" 
-                alt="Ozilum Logo" 
-                style={{
-                  height: '60px',
-                  width: 'auto'
-                }}
-              />
+              <Logo size="large" />
             </div>
             <p className="body-small" style={{
               marginBottom: '24px',
