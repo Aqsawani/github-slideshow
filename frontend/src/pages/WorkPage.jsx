@@ -138,7 +138,7 @@ const WorkPage = () => {
               minHeight: '400px'
             }}
           >
-            <behold-widget feed-id="ZxGiAOZX6jUflSBAaBx7"></behold-widget>
+            <div data-behold-id="ZxGiAOZX6jUflSBAaBx7"></div>
           </div>
         </div>
       </section>
