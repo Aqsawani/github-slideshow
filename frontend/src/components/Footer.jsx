@@ -57,6 +57,18 @@ const Footer = () => {
               onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}>
                 <Instagram size={20} />
               </a>
+              <span style={{
+                color: 'var(--text-secondary)',
+                cursor: 'default'
+              }}>
+                <Github size={20} />
+              </span>
+              <span style={{
+                color: 'var(--text-secondary)',
+                cursor: 'default'
+              }}>
+                <FaPinterest size={20} />
+              </span>
             </div>
           </div>
 
