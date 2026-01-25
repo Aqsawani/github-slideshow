@@ -5,6 +5,7 @@ import Services from '../components/Services';
 import WhyChoose from '../components/WhyChoose';
 import Process from '../components/Process';
 import Portfolio from '../components/Portfolio';
+import Clients from '../components/Clients';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -18,6 +19,7 @@ const HomePage = () => {
       <WhyChoose />
       <Process />
       <Portfolio />
+      <Clients />
       <Testimonials />
       <Contact />
       <Footer />
