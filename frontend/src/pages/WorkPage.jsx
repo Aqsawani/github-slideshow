@@ -162,8 +162,8 @@ const WorkPage = () => {
               margin: '80px auto 0'
             }}>
               {[
-                { number: '50+', label: 'Projects Completed' },
-                { number: '30+', label: 'Happy Clients' },
+                { number: '150+', label: 'Projects Completed' },
+                { number: '120+', label: 'Happy Clients' },
                 { number: '5', label: 'Years Experience' }
               ].map((stat, index) => (
                 <div key={index} style={{ textAlign: 'center' }}>
