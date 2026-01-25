@@ -196,6 +196,20 @@ const Hero = () => {
           0%, 100% { transform: translate(0, 0); }
           50% { transform: translate(30px, 30px); }
         }
+        
+        @media (max-width: 767px) {
+          .brand-display {
+            font-size: 2.5rem !important;
+          }
+          
+          .body-large {
+            font-size: 1.1rem !important;
+          }
+          
+          .fade-in-up.animate-delay-4 > div > div:first-child {
+            font-size: 2rem !important;
+          }
+        }
       `}</style>
     </section>
   );
