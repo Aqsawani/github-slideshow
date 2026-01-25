@@ -27,7 +27,7 @@ const WhyChoose = () => {
 
   return (
     <section id="about" style={{
-      background: 'var(--secondary-olive)',
+      background: '#1e2827',
       padding: '120px 40px'
     }}>
       <div className="container" style={{
