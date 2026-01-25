@@ -33,14 +33,18 @@ const Header = () => {
       }}>
         {/* Logo */}
         <div style={{
-          fontSize: '1.5rem',
-          fontWeight: '900',
-          color: 'var(--brand-primary)',
-          textTransform: 'uppercase',
-          letterSpacing: '-0.02em',
+          display: 'flex',
+          alignItems: 'center',
           cursor: 'pointer'
         }} onClick={() => scrollToSection('home')}>
-          Ozilum
+          <img 
+            src="/ozilum-logo.jpeg" 
+            alt="Ozilum Logo" 
+            style={{
+              height: '50px',
+              width: 'auto'
+            }}
+          />
         </div>
 
         {/* Desktop Navigation */}
