@@ -82,8 +82,8 @@ const Clients = () => {
           {/* Sliding Track */}
           <div className="clients-track" style={{
             display: 'flex',
-            gap: '80px',
-            animation: 'slide 30s linear infinite',
+            gap: '100px',
+            animation: 'slide 35s linear infinite',
             width: 'fit-content'
           }}>
             {duplicatedClients.map((client, index) => (
@@ -92,29 +92,29 @@ const Clients = () => {
                 className="client-logo-container"
                 style={{
                   flexShrink: 0,
-                  width: '280px',
-                  height: '180px',
+                  width: '380px',
+                  height: '250px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  borderRadius: '16px',
-                  padding: '30px',
-                  border: '1px solid rgba(0, 163, 168, 0.1)',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  borderRadius: '20px',
+                  padding: '40px',
+                  border: '2px solid rgba(0, 163, 168, 0.15)',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer',
                   backdropFilter: 'blur(10px)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.08)';
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
                   e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.4)';
                   e.currentTarget.style.boxShadow = '0 15px 40px rgba(0, 163, 168, 0.3)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.1)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.15)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
@@ -125,14 +125,14 @@ const Clients = () => {
                     maxWidth: '100%',
                     maxHeight: '100%',
                     objectFit: 'contain',
-                    filter: 'brightness(1.1)',
+                    filter: 'brightness(1.15)',
                     transition: 'filter 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = 'brightness(1.2) drop-shadow(0 0 10px rgba(0, 163, 168, 0.3))';
+                    e.currentTarget.style.filter = 'brightness(1.25) drop-shadow(0 0 15px rgba(0, 163, 168, 0.4))';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = 'brightness(1.1)';
+                    e.currentTarget.style.filter = 'brightness(1.15)';
                   }}
                 />
               </div>
