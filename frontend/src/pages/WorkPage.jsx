@@ -136,11 +136,21 @@ const WorkPage = () => {
               borderRadius: '16px',
               overflow: 'hidden',
               background: 'var(--bg-page)',
-              padding: '20px'
+              padding: '20px',
+              minHeight: '400px'
             }}
           >
-            <div id="behold-pah5R7ZNuCxnnq1j3bld"></div>
-            <script async src="https://cdn.behold.so/widget.js" data-feed="pah5R7ZNuCxnnq1j3bld"></script>
+            <iframe 
+              src="https://feeds.behold.so/pah5R7ZNuCxnnq1j3bld"
+              style={{
+                width: '100%',
+                height: '600px',
+                border: 'none',
+                borderRadius: '12px'
+              }}
+              title="OZlume Instagram Feed"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
