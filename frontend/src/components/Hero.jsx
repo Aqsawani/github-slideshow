@@ -18,7 +18,8 @@ const Hero = () => {
       justifyContent: 'center',
       padding: '120px 40px 80px',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      width: '100%'
     }}>
       {/* Animated background elements */}
       <div style={{
@@ -31,7 +32,8 @@ const Hero = () => {
         borderRadius: '50%',
         filter: 'blur(80px)',
         animation: 'float 20s ease-in-out infinite',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        maxWidth: '80vw'
       }} />
       
       <div style={{
@@ -44,7 +46,8 @@ const Hero = () => {
         borderRadius: '50%',
         filter: 'blur(60px)',
         animation: 'float 15s ease-in-out infinite reverse',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        maxWidth: '60vw'
       }} />
 
       <div className="container" style={{
