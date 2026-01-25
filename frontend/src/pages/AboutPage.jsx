@@ -19,10 +19,6 @@ const AboutPage = () => {
         position: 'relative',
         overflow: 'hidden'
       }}>
-        {/* Floating Orbs */}
-        <div className="floating-orb" style={{ width: '400px', height: '400px', top: '10%', left: '-10%' }}></div>
-        <div className="floating-orb" style={{ width: '300px', height: '300px', bottom: '10%', right: '-5%', animationDelay: '-5s' }}></div>
-
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '20px' }}>
             <div style={{
