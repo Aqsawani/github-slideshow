@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import WhyChoose from '../components/WhyChoose';
 import Process from '../components/Process';
-import Portfolio from '../components/Portfolio';
+import PortfolioCTA from '../components/PortfolioCTA';
 import Clients from '../components/Clients';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
@@ -18,7 +18,7 @@ const HomePage = () => {
       <Services />
       <WhyChoose />
       <Process />
-      <Portfolio />
+      <PortfolioCTA />
       <Clients />
       <Testimonials />
       <Contact />
