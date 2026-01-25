@@ -92,6 +92,85 @@ async def get_status_checks():
     
     return status_checks
 
+# Contact Form Endpoint
+@api_router.post("/contact")
+async def submit_contact_form(request: ContactFormRequest):
+    try:
+        # Create submission object
+        submission = ContactSubmission(
+            name=request.name,
+            email=request.email,
+            whatsapp=request.whatsapp,
+            company=request.company,
+            message=request.message
+        )
+        
+        # Store in MongoDB
+        doc = submission.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        await db.contact_submissions.insert_one(doc)
+        
+        # Send email notification via Resend
+        html_content = f"""
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #00A3A8; border-bottom: 2px solid #00A3A8; padding-bottom: 10px;">
+                New Contact Form Submission - OZlume
+            </h2>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <tr>
+                    <td style="padding: 10px; background: #f5f5f5; font-weight: bold; width: 30%;">Name:</td>
+                    <td style="padding: 10px; background: #fff;">{request.name}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; background: #f5f5f5; font-weight: bold;">Email:</td>
+                    <td style="padding: 10px; background: #fff;">{request.email}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; background: #f5f5f5; font-weight: bold;">WhatsApp:</td>
+                    <td style="padding: 10px; background: #fff;">{request.whatsapp}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; background: #f5f5f5; font-weight: bold;">Company:</td>
+                    <td style="padding: 10px; background: #fff;">{request.company or 'Not provided'}</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #00A3A8;">
+                <h3 style="margin: 0 0 10px 0; color: #333;">Message:</h3>
+                <p style="margin: 0; color: #555; line-height: 1.6;">{request.message}</p>
+            </div>
+            
+            <p style="margin-top: 30px; color: #888; font-size: 12px;">
+                This email was sent from the OZlume website contact form.
+            </p>
+        </div>
+        """
+        
+        params = {
+            "from": SENDER_EMAIL,
+            "to": [RECIPIENT_EMAIL],
+            "subject": f"New Contact Form Submission from {request.name}",
+            "html": html_content
+        }
+        
+        # Send email asynchronously
+        try:
+            await asyncio.to_thread(resend.Emails.send, params)
+            logger.info(f"Contact form email sent for {request.email}")
+        except Exception as email_error:
+            logger.error(f"Failed to send email notification: {str(email_error)}")
+            # Don't fail the request if email fails - data is still saved
+        
+        return {
+            "status": "success",
+            "message": "Thank you for your message! We'll get back to you within 24 hours."
+        }
+        
+    except Exception as e:
+        logger.error(f"Contact form submission failed: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to submit contact form. Please try again.")
+
 # Include the router in the main app
 app.include_router(api_router)
 
