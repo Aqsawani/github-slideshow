@@ -17,7 +17,8 @@ const Hero = () => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '120px 40px 80px',
-      position: 'relative'
+      position: 'relative',
+      overflow: 'hidden'
     }}>
       <div className="container" style={{
         maxWidth: '1400px',
@@ -25,7 +26,7 @@ const Hero = () => {
         textAlign: 'center'
       }}>
         {/* Main Headline */}
-        <h1 className="brand-display" style={{
+        <h1 className="brand-display fade-in-up" style={{
           marginBottom: '24px',
           maxWidth: '900px',
           margin: '0 auto 24px'
@@ -34,7 +35,7 @@ const Hero = () => {
         </h1>
 
         {/* Subheading */}
-        <p className="body-large" style={{
+        <p className="body-large fade-in-up animate-delay-2" style={{
           marginBottom: '48px',
           maxWidth: '700px',
           margin: '0 auto 48px',
@@ -44,7 +45,7 @@ const Hero = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div style={{
+        <div className="fade-in-up animate-delay-3" style={{
           display: 'flex',
           gap: '20px',
           justifyContent: 'center',
