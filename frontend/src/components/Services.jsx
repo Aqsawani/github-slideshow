@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Palette, Sparkles, Globe, TrendingUp, Code, Layers } from 'lucide-react';
 
 const Services = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const services = [
     {
       icon: <Palette size={32} />,
@@ -36,7 +60,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" style={{
+    <section id="services" ref={sectionRef} style={{
       background: 'var(--bg-page)',
       padding: '120px 40px'
     }}>
@@ -45,7 +69,7 @@ const Services = () => {
         margin: '0 auto'
       }}>
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div className={`scroll-reveal ${isVisible ? 'visible' : ''}`} style={{ textAlign: 'center', marginBottom: '80px' }}>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
             Our Services
           </h2>
@@ -63,19 +87,23 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="card-hover-effect"
+              className={`card-hover-effect scroll-reveal ${isVisible ? 'visible' : ''}`}
               style={{
                 background: 'var(--bg-card)',
                 padding: '40px',
                 borderRadius: '8px',
                 border: '1px solid var(--border-medium)',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                transitionDelay: `${index * 0.1}s`
               }}
             >
               <div style={{
                 color: 'var(--brand-primary)',
-                marginBottom: '20px'
-              }}>
+                marginBottom: '20px',
+                transition: 'transform 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
                 {service.icon}
               </div>
               <h3 className="heading-3" style={{
