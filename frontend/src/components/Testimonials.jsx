@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 const Testimonials = () => {
   return (
     <section style={{
-      background: 'var(--secondary-olive)',
+      background: '#1e2827',
       padding: '120px 40px'
     }}>
       <div className="container" style={{
