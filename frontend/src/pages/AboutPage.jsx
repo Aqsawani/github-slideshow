@@ -41,7 +41,7 @@ const AboutPage = () => {
               marginBottom: '24px',
               lineHeight: '1.1'
             }}>
-              We Are <span style={{ color: 'var(--brand-primary)' }}>Ozilum</span>
+              We Are <span style={{ color: 'var(--brand-primary)' }}>OZlume</span>
             </h1>
             
             <p style={{
@@ -138,7 +138,7 @@ const AboutPage = () => {
                 lineHeight: '1.8',
                 marginBottom: '20px'
               }}>
-                Ozilum is a Melbourne-based creative agency founded with a simple mission: to help businesses 
+                OZlume is a Melbourne-based creative agency founded with a simple mission: to help businesses 
                 elevate their brand presence in the digital world.
               </p>
               <p style={{
@@ -187,7 +187,7 @@ const AboutPage = () => {
                 color: 'var(--brand-primary)',
                 marginBottom: '30px'
               }}>
-                Why "Ozilum"?
+                Why "OZlume"?
               </h3>
               <p style={{
                 color: 'var(--text-secondary)',

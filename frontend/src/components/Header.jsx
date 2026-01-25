@@ -71,7 +71,7 @@ const Header = () => {
         {/* Logo */}
         <img 
           src="/images/ozilum-logo.png" 
-          alt="Ozilum - Elevating Brands The OZ Way"
+          alt="OZlume - Elevating Brands The OZ Way"
           onClick={goToHome}
           data-testid="header-logo"
           style={{
