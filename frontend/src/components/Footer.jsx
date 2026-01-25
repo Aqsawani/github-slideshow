@@ -35,7 +35,7 @@ const Footer = () => {
                 style={{
                   height: '60px',
                   width: 'auto',
-                  filter: 'brightness(1.2) drop-shadow(0 0 10px rgba(0, 163, 168, 0.6)) drop-shadow(0 0 20px rgba(0, 163, 168, 0.4))'
+                  filter: 'drop-shadow(0 0 6px rgba(0, 163, 168, 0.3))'
                 }}
               />
             </div>

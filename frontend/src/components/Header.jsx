@@ -79,7 +79,7 @@ const Header = () => {
             width: 'auto',
             cursor: 'pointer',
             transition: 'height 0.3s ease, filter 0.3s ease',
-            filter: 'brightness(1.2) drop-shadow(0 0 8px rgba(0, 163, 168, 0.5)) drop-shadow(0 0 15px rgba(0, 163, 168, 0.3))'
+            filter: 'drop-shadow(0 0 6px rgba(0, 163, 168, 0.3))'
           }}
         />
 

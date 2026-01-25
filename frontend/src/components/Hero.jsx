@@ -166,7 +166,7 @@ const Hero = () => {
           fontSize: '1.35rem',
           lineHeight: '1.6'
         }}>
-          Logo Design, Branding, Web Development & Digital Growth — The Australian Way.
+          Logo Design, Branding, Web Development & Digital Growth — The Aussie Way.
         </p>
 
         {/* CTA Buttons */}
