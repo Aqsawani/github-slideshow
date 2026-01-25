@@ -6,6 +6,19 @@ import { Instagram, ExternalLink, ArrowRight } from 'lucide-react';
 const WorkPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Load Behold widget script
+    const script = document.createElement('script');
+    script.src = 'https://w.behold.so/widget.js';
+    script.type = 'module';
+    document.head.appendChild(script);
+    
+    return () => {
+      const existingScript = document.querySelector('script[src="https://w.behold.so/widget.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
   }, []);
 
   const instagramUrl = 'https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr';
@@ -125,17 +138,7 @@ const WorkPage = () => {
               minHeight: '400px'
             }}
           >
-            <iframe 
-              src="https://feeds.behold.so/pah5R7ZNuCxnnq1j3bld"
-              style={{
-                width: '100%',
-                height: '600px',
-                border: 'none',
-                borderRadius: '12px'
-              }}
-              title="OZlume Instagram Feed"
-              loading="lazy"
-            />
+            <behold-widget feed-id="ZxGiAOZX6jUflSBAaBx7"></behold-widget>
           </div>
         </div>
       </section>
