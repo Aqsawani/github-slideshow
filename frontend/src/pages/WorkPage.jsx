@@ -139,7 +139,8 @@ const WorkPage = () => {
               padding: '20px'
             }}
           >
-            <behold-widget feed-id="pah5R7ZNuCxnnq1j3bld"></behold-widget>
+            <div id="behold-pah5R7ZNuCxnnq1j3bld"></div>
+            <script async src="https://cdn.behold.so/widget.js" data-feed="pah5R7ZNuCxnnq1j3bld"></script>
           </div>
         </div>
       </section>
