@@ -1,28 +1,19 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import WhyChoose from './components/WhyChoose';
-import Process from './components/Process';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ServicePage from './pages/ServicePage';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <Services />
-      <WhyChoose />
-      <Process />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services/:serviceId" element={<ServicePage />} />
+        </Routes>
+      </BrowserRouter>
       <Toaster />
     </div>
   );
