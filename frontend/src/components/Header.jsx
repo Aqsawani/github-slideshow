@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +17,33 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
+    setMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+  };
+
+  const handleNavigation = (path) => {
+    setMobileMenuOpen(false);
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
+  const goToHome = () => {
+    setMobileMenuOpen(false);
+    navigate('/');
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -47,7 +72,7 @@ const Header = () => {
         <img 
           src="/images/ozilum-logo.png" 
           alt="Ozilum - Elevating Brands The OZ Way"
-          onClick={() => scrollToSection('home')}
+          onClick={goToHome}
           data-testid="header-logo"
           style={{
             height: scrolled ? '45px' : '55px',
@@ -64,8 +89,8 @@ const Header = () => {
           alignItems: 'center'
         }} className="desktop-nav">
           <a href="#services" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a>
-          <a href="#work" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('work'); }}>Work</a>
-          <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
+          <a href="/work" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/work'); }}>Work</a>
+          <a href="/about" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/about'); }}>About</a>
           <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           <button className="btn-primary" onClick={() => scrollToSection('contact')}
             style={{ padding: '0.75em 1.5em', fontSize: '0.9rem' }}>
@@ -105,8 +130,8 @@ const Header = () => {
           borderTop: '1px solid var(--border-medium)'
         }}>
           <a href="#services" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a>
-          <a href="#work" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('work'); }}>Work</a>
-          <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
+          <a href="/work" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/work'); }}>Work</a>
+          <a href="/about" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/about'); }}>About</a>
           <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           <button className="btn-primary" onClick={() => scrollToSection('contact')}>
             Get a Quote
