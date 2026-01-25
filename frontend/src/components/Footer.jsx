@@ -24,14 +24,16 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div style={{
-              fontSize: '1.5rem',
-              fontWeight: '900',
-              color: 'var(--brand-primary)',
-              textTransform: 'uppercase',
-              letterSpacing: '-0.02em',
               marginBottom: '16px'
             }}>
-              Ozilum
+              <img 
+                src="/ozilum-logo.jpeg" 
+                alt="Ozilum Logo" 
+                style={{
+                  height: '60px',
+                  width: 'auto'
+                }}
+              />
             </div>
             <p className="body-small" style={{
               marginBottom: '24px',
