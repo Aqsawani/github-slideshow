@@ -6,7 +6,12 @@ const Clients = () => {
     { name: 'StockDex', logo: '/clients/stockdex.jpeg' },
     { name: 'Unchained Interactive', logo: '/clients/unchained.jpeg' },
     { name: 'Builders Brotherhood', logo: '/clients/builders.jpeg' },
-    { name: 'Texas Habanero', logo: '/clients/texas.jpeg' }
+    { name: 'Texas Habanero', logo: '/clients/texas.jpeg' },
+    { name: 'Toshi Group', logo: '/clients/toshi.jpeg' },
+    { name: 'Rezieo', logo: '/clients/rezieo.jpeg' },
+    { name: 'Obsessed with Better', logo: '/clients/obsessed.jpeg' },
+    { name: 'Yin Yoga', logo: '/clients/yinyoga.jpeg' },
+    { name: 'Four Cedars Counselling', logo: '/clients/cedars.jpeg' }
   ];
 
   // Duplicate the clients array for seamless infinite scroll
