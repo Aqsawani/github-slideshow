@@ -182,10 +182,15 @@ const Hero = () => {
             Get a Quote
             <ArrowRight size={20} />
           </button>
-          <button className="btn-secondary" onClick={() => scrollToSection('work')}
-            style={{ fontSize: '1.05rem' }}>
+          <a 
+            href="https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-secondary" 
+            style={{ fontSize: '1.05rem', textDecoration: 'none', display: 'inline-block' }}
+          >
             View Our Work
-          </button>
+          </a>
         </div>
 
         {/* Animated Stats */}
