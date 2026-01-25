@@ -4,7 +4,6 @@ import { Mail, MapPin, Instagram, Phone, Github } from 'lucide-react';
 import { FaPinterest } from 'react-icons/fa';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
 
   return (
@@ -211,7 +210,7 @@ const Footer = () => {
           gap: '20px'
         }}>
           <p className="body-small" style={{ margin: 0 }}>
-            © {currentYear} OZlume. All rights reserved.
+            © OZlume. All rights reserved.
           </p>
           
           {/* Australian Flags */}
