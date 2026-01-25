@@ -33,20 +33,7 @@ const Header = () => {
         margin: '0 auto'
       }}>
         {/* Logo */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer'
-        }} onClick={() => scrollToSection('home')}>
-          <img 
-            src="/ozilum-logo.jpeg" 
-            alt="Ozilum Logo" 
-            style={{
-              height: '50px',
-              width: 'auto'
-            }}
-          />
-        </div>
+        <Logo size="medium" onClick={() => scrollToSection('home')} />
 
         {/* Desktop Navigation */}
         <div style={{
