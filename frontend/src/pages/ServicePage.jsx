@@ -81,7 +81,7 @@ const ServicePage = () => {
         'Refinement: Perfecting your chosen concept',
         'Delivery: All file formats and brand guidelines'
       ],
-      pricing: 'Starting from $899',
+      pricing: 'Starting from $299',
       deliverables: [
         'Final logo in all formats (AI, EPS, PNG, JPG, SVG)',
         'Color variations (full color, black, white)',
@@ -100,7 +100,7 @@ const ServicePage = () => {
         'Brand voice & messaging',
         'Competitive positioning',
         'Brand guidelines manual',
-        'Long-term brand roadmap'
+        'Logo design included'
       ],
       process: [
         'Brand Strategy: Market research, competitor analysis, positioning',
@@ -108,7 +108,8 @@ const ServicePage = () => {
         'Brand Applications: Business cards, letterhead, templates',
         'Brand Book: Comprehensive guidelines for consistent use'
       ],
-      pricing: 'Starting from $2,499',
+      pricing: 'Starting from $945',
+      pricingNote: 'Includes logo design',
       deliverables: [
         'Complete brand strategy document',
         'Logo suite with variations',
@@ -136,7 +137,7 @@ const ServicePage = () => {
         'Refinement: Perfecting the details',
         'Final Delivery: All formats ready to use'
       ],
-      pricing: 'From $299 per project',
+      pricing: 'Custom pricing',
       deliverables: [
         'Brochures and flyers',
         'Business cards and stationery',
@@ -164,7 +165,7 @@ const ServicePage = () => {
         'Development: Clean, modern code',
         'Launch: Testing, deployment, and training'
       ],
-      pricing: 'Starting from $3,999',
+      pricing: 'Starting from $1,395',
       deliverables: [
         'Custom responsive website',
         'Content management system',
@@ -192,7 +193,7 @@ const ServicePage = () => {
         'Implementation: Technical fixes and improvements',
         'Monitoring: Ongoing tracking and reporting'
       ],
-      pricing: 'From $1,499/month',
+      pricing: 'From $495/month',
       deliverables: [
         'Technical SEO audit',
         'On-page optimization',
