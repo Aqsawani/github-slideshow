@@ -36,6 +36,17 @@ Build a modern, professional agency website for "Ozilum" - a design and digital 
    - Marketing Materials (`/services/marketing-materials`)
    - Social Media (`/services/social-media`)
 
+3. **About Page (`/about`):**
+   - Company introduction: Melbourne-based agency
+   - Team info: 5 designers and developers
+   - Company story and values sections
+   - Team roles showcase
+
+4. **Work Page (`/work`):**
+   - Portfolio redirect to Instagram (@ozilum_)
+   - Instagram CTA button
+   - Project statistics (50+ projects, 30+ clients, 5 years)
+
 3. **Design & Animations:**
    - Glass-morphism effects
    - Floating orbs background
