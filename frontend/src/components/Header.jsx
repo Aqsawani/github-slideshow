@@ -78,7 +78,8 @@ const Header = () => {
             height: scrolled ? '45px' : '55px',
             width: 'auto',
             cursor: 'pointer',
-            transition: 'height 0.3s ease'
+            transition: 'height 0.3s ease, filter 0.3s ease',
+            filter: 'brightness(1.2) drop-shadow(0 0 8px rgba(0, 163, 168, 0.5)) drop-shadow(0 0 15px rgba(0, 163, 168, 0.3))'
           }}
         />
 
