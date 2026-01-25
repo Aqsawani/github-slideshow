@@ -253,13 +253,31 @@ const ServicePage = () => {
       
       {/* Hero Section */}
       <section ref={heroRef} className={`scroll-reveal ${sectionsVisible.hero ? 'visible' : ''}`} style={{
-        background: 'var(--bg-page)',
+        background: 'var(--gradient-dark)',
         padding: '140px 40px 80px',
-        borderBottom: '1px solid var(--border-medium)'
+        borderBottom: '1px solid var(--border-medium)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Animated background orbs */}
+        <div style={{
+          position: 'absolute',
+          top: '10%',
+          right: '5%',
+          width: '500px',
+          height: '500px',
+          background: 'radial-gradient(circle, rgba(0, 163, 168, 0.15) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(80px)',
+          animation: 'float 20s ease-in-out infinite',
+          pointerEvents: 'none'
+        }} />
+        
         <div className="container" style={{
           maxWidth: '1200px',
-          margin: '0 auto'
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 1
         }}>
           <button 
             onClick={() => navigate('/')}
@@ -284,13 +302,44 @@ const ServicePage = () => {
             Back to Home
           </button>
           
-          <h1 className="heading-1 fade-in-up" style={{ marginBottom: '20px' }}>
+          {/* Service badge */}
+          <div className="fade-in" style={{
+            display: 'inline-block',
+            padding: '8px 20px',
+            background: 'rgba(0, 163, 168, 0.1)',
+            border: '1px solid rgba(0, 163, 168, 0.3)',
+            borderRadius: '50px',
+            marginBottom: '24px',
+            fontSize: '0.85rem',
+            color: 'var(--brand-primary)',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em'
+          }}>
+            Our Service
+          </div>
+          
+          <h1 className="heading-1 fade-in-up" style={{ 
+            marginBottom: '20px',
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #00A3A8 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
             {service.title}
           </h1>
-          <p className="body-large fade-in-up animate-delay-1" style={{ marginBottom: '40px', maxWidth: '800px' }}>
+          <p className="body-large fade-in-up animate-delay-1" style={{ 
+            marginBottom: '40px', 
+            maxWidth: '800px',
+            fontSize: '1.35rem'
+          }}>
             {service.tagline}
           </p>
-          <p className="body-medium fade-in-up animate-delay-2" style={{ maxWidth: '700px', lineHeight: '1.8' }}>
+          <p className="body-medium fade-in-up animate-delay-2" style={{ 
+            maxWidth: '700px', 
+            lineHeight: '1.8',
+            color: 'var(--text-secondary)'
+          }}>
             {service.description}
           </p>
         </div>
@@ -298,13 +347,29 @@ const ServicePage = () => {
 
       {/* Benefits Section */}
       <section ref={benefitsRef} className={`scroll-reveal ${sectionsVisible.benefits ? 'visible' : ''}`} style={{
-        background: '#1e2827',
-        padding: '80px 40px'
+        background: 'var(--bg-page)',
+        padding: '80px 40px',
+        position: 'relative'
       }}>
         <div className="container" style={{
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
+          <div style={{
+            display: 'inline-block',
+            padding: '8px 20px',
+            background: 'rgba(0, 163, 168, 0.1)',
+            border: '1px solid rgba(0, 163, 168, 0.3)',
+            borderRadius: '50px',
+            marginBottom: '32px',
+            fontSize: '0.85rem',
+            color: 'var(--brand-primary)',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em'
+          }}>
+            Benefits
+          </div>
           <h2 className="heading-2" style={{ marginBottom: '40px' }}>What You Get</h2>
           <div style={{
             display: 'grid',
@@ -314,13 +379,24 @@ const ServicePage = () => {
             {service.benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="scale-in"
+                className="scale-in glass-effect"
                 style={{
                   display: 'flex',
                   alignItems: 'start',
                   gap: '12px',
+                  padding: '24px',
+                  borderRadius: '12px',
                   animationDelay: `${index * 0.1}s`,
-                  opacity: sectionsVisible.benefits ? 1 : 0
+                  opacity: sectionsVisible.benefits ? 1 : 0,
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 163, 168, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <Check size={24} style={{ 
@@ -342,13 +418,45 @@ const ServicePage = () => {
 
       {/* Process Section */}
       <section ref={processRef} className={`scroll-reveal ${sectionsVisible.process ? 'visible' : ''}`} style={{
-        background: 'var(--bg-page)',
-        padding: '80px 40px'
+        background: 'var(--gradient-dark)',
+        padding: '80px 40px',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Background decoration */}
+        <div style={{
+          position: 'absolute',
+          bottom: '10%',
+          left: '5%',
+          width: '600px',
+          height: '600px',
+          background: 'radial-gradient(circle, rgba(0, 163, 168, 0.1) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(100px)',
+          pointerEvents: 'none'
+        }} />
+        
         <div className="container" style={{
           maxWidth: '1200px',
-          margin: '0 auto'
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 1
         }}>
+          <div style={{
+            display: 'inline-block',
+            padding: '8px 20px',
+            background: 'rgba(0, 163, 168, 0.1)',
+            border: '1px solid rgba(0, 163, 168, 0.3)',
+            borderRadius: '50px',
+            marginBottom: '32px',
+            fontSize: '0.85rem',
+            color: 'var(--brand-primary)',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em'
+          }}>
+            Process
+          </div>
           <h2 className="heading-2" style={{ marginBottom: '40px' }}>Our Process</h2>
           <div style={{
             display: 'flex',
@@ -358,31 +466,52 @@ const ServicePage = () => {
             {service.process.map((step, index) => (
               <div 
                 key={index} 
-                className="card-hover-effect slide-in-left"
+                className="card-hover-effect slide-in-left glass-effect"
                 style={{
-                  background: 'var(--bg-card)',
                   padding: '32px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--border-medium)',
+                  borderRadius: '16px',
                   display: 'flex',
                   gap: '24px',
                   alignItems: 'start',
                   animationDelay: `${index * 0.15}s`,
-                  opacity: sectionsVisible.process ? 1 : 0
+                  opacity: sectionsVisible.process ? 1 : 0,
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
+                {/* Decorative gradient */}
                 <div style={{
-                  fontSize: '2rem',
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  width: '200px',
+                  height: '200px',
+                  background: 'radial-gradient(circle, rgba(0, 163, 168, 0.15) 0%, transparent 70%)',
+                  borderRadius: '50%',
+                  pointerEvents: 'none'
+                }} />
+                
+                <div style={{
+                  fontSize: '2.5rem',
                   fontWeight: '900',
-                  color: 'var(--brand-primary)',
-                  minWidth: '60px',
-                  transition: 'transform 0.3s ease'
+                  background: 'linear-gradient(135deg, #00A3A8 0%, #00d4db 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  minWidth: '70px',
+                  transition: 'transform 0.3s ease',
+                  position: 'relative',
+                  zIndex: 1
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
                   {String(index + 1).padStart(2, '0')}
                 </div>
-                <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
+                <p className="body-medium" style={{ 
+                  color: 'var(--text-secondary)',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
                   {step}
                 </p>
               </div>
@@ -393,14 +522,29 @@ const ServicePage = () => {
 
       {/* Deliverables Section */}
       <section ref={deliverablesRef} className={`scroll-reveal ${sectionsVisible.deliverables ? 'visible' : ''}`} style={{
-        background: '#1e2827',
+        background: 'var(--bg-page)',
         padding: '80px 40px'
       }}>
         <div className="container" style={{
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
-          <h2 className="heading-2" style={{ marginBottom: '40px' }}>Deliverables</h2>
+          <div style={{
+            display: 'inline-block',
+            padding: '8px 20px',
+            background: 'rgba(0, 163, 168, 0.1)',
+            border: '1px solid rgba(0, 163, 168, 0.3)',
+            borderRadius: '50px',
+            marginBottom: '32px',
+            fontSize: '0.85rem',
+            color: 'var(--brand-primary)',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em'
+          }}>
+            Deliverables
+          </div>
+          <h2 className="heading-2" style={{ marginBottom: '40px' }}>What You'll Receive</h2>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -409,17 +553,25 @@ const ServicePage = () => {
             {service.deliverables.map((item, index) => (
               <div 
                 key={index} 
-                className="card-hover-effect fade-in-up"
+                className="card-hover-effect fade-in-up glass-effect"
                 style={{
-                  background: 'var(--bg-card)',
-                  padding: '20px 24px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--border-medium)',
+                  padding: '24px',
+                  borderRadius: '12px',
                   animationDelay: `${index * 0.08}s`,
-                  opacity: sectionsVisible.deliverables ? 1 : 0
+                  opacity: sectionsVisible.deliverables ? 1 : 0,
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <p className="body-small" style={{ color: 'var(--text-primary)' }}>
+                <p className="body-small" style={{ 
+                  color: 'var(--text-primary)',
+                  fontWeight: '500'
+                }}>
                   {item}
                 </p>
               </div>
@@ -430,26 +582,63 @@ const ServicePage = () => {
 
       {/* Pricing & CTA Section */}
       <section ref={pricingRef} className={`scroll-reveal ${sectionsVisible.pricing ? 'visible' : ''}`} style={{
-        background: 'var(--bg-page)',
-        padding: '80px 40px'
+        background: 'var(--gradient-dark)',
+        padding: '100px 40px',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Centered glow */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '600px',
+          height: '600px',
+          background: 'radial-gradient(circle, rgba(0, 163, 168, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(100px)',
+          pointerEvents: 'none'
+        }} />
+        
         <div className="container" style={{
           maxWidth: '800px',
           margin: '0 auto',
-          textAlign: 'center'
+          textAlign: 'center',
+          position: 'relative',
+          zIndex: 1
         }}>
-          <h2 className="heading-2 fade-in-up" style={{ marginBottom: '20px' }}>Investment</h2>
-          <p className="body-large scale-in animate-delay-1" style={{ 
-            marginBottom: '40px', 
+          <div style={{
+            display: 'inline-block',
+            padding: '8px 20px',
+            background: 'rgba(0, 163, 168, 0.1)',
+            border: '1px solid rgba(0, 163, 168, 0.3)',
+            borderRadius: '50px',
+            marginBottom: '32px',
+            fontSize: '0.85rem',
             color: 'var(--brand-primary)',
-            opacity: sectionsVisible.pricing ? 1 : 0
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em'
+          }}>
+            Investment
+          </div>
+          <h2 className="heading-2 fade-in-up" style={{ marginBottom: '20px' }}>Ready to Get Started?</h2>
+          <p className="body-large scale-in animate-delay-1" style={{ 
+            marginBottom: '24px', 
+            color: 'var(--brand-primary)',
+            opacity: sectionsVisible.pricing ? 1 : 0,
+            fontSize: '2.5rem',
+            fontWeight: '700'
           }}>
             {service.pricing}
           </p>
           <p className="body-medium fade-in-up animate-delay-2" style={{ 
-            marginBottom: '40px', 
+            marginBottom: '48px', 
             color: 'var(--text-secondary)',
-            opacity: sectionsVisible.pricing ? 1 : 0
+            opacity: sectionsVisible.pricing ? 1 : 0,
+            maxWidth: '600px',
+            margin: '0 auto 48px'
           }}>
             Every project is unique. Let's discuss your specific needs and create a custom solution that fits your goals and budget.
           </p>
@@ -466,16 +655,25 @@ const ServicePage = () => {
               display: 'inline-flex', 
               alignItems: 'center', 
               gap: '8px',
-              opacity: sectionsVisible.pricing ? 1 : 0
+              opacity: sectionsVisible.pricing ? 1 : 0,
+              fontSize: '1.05rem',
+              padding: '1.2em 2.5em'
             }}
           >
             Start Your Project
-            <ArrowRight size={18} />
+            <ArrowRight size={20} />
           </button>
         </div>
       </section>
 
       <Footer />
+      
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(30px, 30px); }
+        }
+      `}</style>
     </div>
   );
 };
