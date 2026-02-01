@@ -628,10 +628,10 @@ const ServicePage = () => {
             marginBottom: '24px', 
             color: 'var(--brand-primary)',
             opacity: sectionsVisible.pricing ? 1 : 0,
-            fontSize: '2rem',
+            fontSize: '1.8rem',
             fontWeight: '700'
           }}>
-            {service.pricing}
+            Get Your Free Quote Today
           </p>
           <p className="body-medium fade-in-up animate-delay-2" style={{ 
             marginBottom: '48px', 
@@ -640,7 +640,7 @@ const ServicePage = () => {
             maxWidth: '600px',
             margin: '0 auto 48px'
           }}>
-            Every project is unique. Contact OZlume today for a free consultation and custom quote tailored to your Australian business needs.
+            Every project is unique. Message us today for a free consultation and custom quote tailored to your business needs.
           </p>
           <button 
             className="btn-primary fade-in-up animate-delay-3" 
