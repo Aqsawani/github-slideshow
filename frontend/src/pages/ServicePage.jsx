@@ -625,36 +625,13 @@ const ServicePage = () => {
           </div>
           <h2 className="heading-2 fade-in-up" style={{ marginBottom: '20px' }}>Ready to Get Started?</h2>
           <p className="body-large scale-in animate-delay-1" style={{ 
-            marginBottom: '16px', 
+            marginBottom: '24px', 
             color: 'var(--brand-primary)',
             opacity: sectionsVisible.pricing ? 1 : 0,
-            fontSize: '2.5rem',
+            fontSize: '2rem',
             fontWeight: '700'
           }}>
             {service.pricing}
-          </p>
-          {service.pricingNote && (
-            <p className="fade-in-up" style={{
-              color: 'var(--text-primary)',
-              fontSize: '1rem',
-              marginBottom: '16px',
-              opacity: sectionsVisible.pricing ? 1 : 0
-            }}>
-              ({service.pricingNote})
-            </p>
-          )}
-          <p className="fade-in-up animate-delay-2" style={{
-            color: 'var(--brand-primary)',
-            fontSize: '1.1rem',
-            fontWeight: '500',
-            marginBottom: '24px',
-            opacity: sectionsVisible.pricing ? 1 : 0,
-            padding: '12px 24px',
-            background: 'rgba(0, 163, 168, 0.1)',
-            borderRadius: '8px',
-            display: 'inline-block'
-          }}>
-            ✦ We also work on custom deals as per your budget
           </p>
           <p className="body-medium fade-in-up animate-delay-2" style={{ 
             marginBottom: '48px', 
@@ -663,7 +640,7 @@ const ServicePage = () => {
             maxWidth: '600px',
             margin: '0 auto 48px'
           }}>
-            Every project is unique. Let's discuss your specific needs and create a custom solution that fits your goals and budget.
+            Every project is unique. Contact OZlume today for a free consultation and custom quote tailored to your Australian business needs.
           </p>
           <button 
             className="btn-primary fade-in-up animate-delay-3" 
