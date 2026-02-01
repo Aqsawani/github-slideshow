@@ -81,7 +81,7 @@ const ServicePage = () => {
         'Refinement: Perfecting your chosen concept with your feedback',
         'Delivery: All file formats and comprehensive brand guidelines'
       ],
-      pricing: 'Contact for Custom Offer',
+      pricing: 'Message Us for a Custom Offer',
       deliverables: [
         'Final logo in all formats (AI, EPS, PNG, JPG, SVG)',
         'Color variations (full color, black, white)',
@@ -108,7 +108,7 @@ const ServicePage = () => {
         'Brand Applications: Business cards, letterhead, templates',
         'Brand Book: Comprehensive guidelines for consistent brand use'
       ],
-      pricing: 'Contact for Custom Offer',
+      pricing: 'Message Us for a Custom Offer',
       deliverables: [
         'Complete brand strategy document',
         'Logo suite with variations',
@@ -136,7 +136,7 @@ const ServicePage = () => {
         'Refinement: Perfecting every detail',
         'Final Delivery: All formats ready for print and digital use'
       ],
-      pricing: 'Contact for Custom Offer',
+      pricing: 'Message Us for a Custom Offer',
       deliverables: [
         'Brochures and flyers',
         'Business cards and stationery',
@@ -164,7 +164,7 @@ const ServicePage = () => {
         'Development: Clean, modern code built for performance',
         'Launch: Testing, deployment, and training for your team'
       ],
-      pricing: 'Contact for Custom Offer',
+      pricing: 'Message Us for a Custom Offer',
       deliverables: [
         'Custom responsive website or Shopify store',
         'Content management system',
@@ -192,7 +192,7 @@ const ServicePage = () => {
         'Implementation: Technical fixes and content improvements',
         'Monitoring: Ongoing tracking and monthly reporting'
       ],
-      pricing: 'Contact for Custom Offer',
+      pricing: 'Message Us for a Custom Offer',
       deliverables: [
         'Technical SEO audit',
         'On-page optimization',
@@ -220,7 +220,7 @@ const ServicePage = () => {
         'Execution: Implementing across all digital channels',
         'Optimization: Continuous improvement based on data'
       ],
-      pricing: 'Contact for Custom Offer',
+      pricing: 'Message Us for a Custom Offer',
       deliverables: [
         'Digital strategy document',
         'Website and web applications',
