@@ -1,0 +1,29 @@
+# OZlume Website Robots.txt
+# Melbourne Digital Agency - Web Design, Branding & SEO
+
+User-agent: *
+Allow: /
+
+# Disallow sensitive areas
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /static/js/*.map
+
+# Sitemap location
+Sitemap: https://ozlume.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
