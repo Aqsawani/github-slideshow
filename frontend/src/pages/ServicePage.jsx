@@ -64,24 +64,24 @@ const ServicePage = () => {
 
   const services = {
     'logo-design': {
-      title: 'Logo Design',
-      tagline: 'Your brand\'s first impression',
-      description: 'A logo is more than just a pretty mark—it\'s the face of your business. We craft distinctive, memorable logos that capture your brand essence and make lasting impressions.',
+      title: 'Professional Logo Design Australia',
+      tagline: 'Create a Memorable Brand Identity for Your Australian Business',
+      description: 'Looking for professional logo design in Australia? OZlume creates distinctive, memorable logos that capture your brand essence. Our Melbourne-based designers craft custom logos for businesses across Sydney, Brisbane, Perth, and all of Australia. Stand out from competitors with a unique brand mark.',
       benefits: [
-        'Unique and memorable design',
+        'Custom Australian logo design',
         'Multiple concept options',
-        'Unlimited revisions',
+        'Unlimited revisions included',
         'Vector files for all uses',
         'Brand guidelines included',
         'Trademark-ready designs'
       ],
       process: [
-        'Discovery & Research: Understanding your business, values, and target audience',
-        'Concept Development: Creating multiple logo directions',
-        'Refinement: Perfecting your chosen concept',
-        'Delivery: All file formats and brand guidelines'
+        'Discovery & Research: Understanding your Australian business, values, and target audience',
+        'Concept Development: Creating multiple unique logo directions',
+        'Refinement: Perfecting your chosen concept with your feedback',
+        'Delivery: All file formats and comprehensive brand guidelines'
       ],
-      pricing: 'Starting from $299',
+      pricing: 'Contact for Custom Offer',
       deliverables: [
         'Final logo in all formats (AI, EPS, PNG, JPG, SVG)',
         'Color variations (full color, black, white)',
@@ -91,25 +91,24 @@ const ServicePage = () => {
       ]
     },
     'brand-identity': {
-      title: 'Brand Identity & Strategy',
-      tagline: 'Build a brand that resonates',
-      description: 'We create complete brand systems from strategy to visual identity. More than just a logo—we develop the entire personality of your brand that resonates with your audience and stands the test of time.',
+      title: 'Brand Identity Design Melbourne & Sydney',
+      tagline: 'Complete Brand Strategy for Australian Businesses',
+      description: 'Transform your business with comprehensive brand identity design from OZlume. We create complete brand systems from strategy to visual identity for businesses across Melbourne, Sydney, and Australia. More than just a logo—we develop your entire brand personality that resonates with Australian audiences.',
       benefits: [
         'Comprehensive brand strategy',
-        'Visual identity system',
+        'Complete visual identity system',
         'Brand voice & messaging',
-        'Competitive positioning',
-        'Brand guidelines manual',
+        'Competitive market positioning',
+        'Professional brand guidelines manual',
         'Logo design included'
       ],
       process: [
-        'Brand Strategy: Market research, competitor analysis, positioning',
-        'Visual System: Logo, colors, typography, patterns',
+        'Brand Strategy: Australian market research, competitor analysis, positioning',
+        'Visual System: Logo, colors, typography, patterns tailored for your market',
         'Brand Applications: Business cards, letterhead, templates',
-        'Brand Book: Comprehensive guidelines for consistent use'
+        'Brand Book: Comprehensive guidelines for consistent brand use'
       ],
-      pricing: 'Starting from $945',
-      pricingNote: 'Includes logo design',
+      pricing: 'Contact for Custom Offer',
       deliverables: [
         'Complete brand strategy document',
         'Logo suite with variations',
@@ -120,9 +119,9 @@ const ServicePage = () => {
       ]
     },
     'graphic-design': {
-      title: 'Graphic Design',
-      tagline: 'Professional design for every need',
-      description: 'From marketing materials to digital assets, we provide professional design solutions for all your communication needs. Clean, impactful designs that get results.',
+      title: 'Graphic Design Services Melbourne',
+      tagline: 'Professional Design Solutions for Australian Businesses',
+      description: 'Need professional graphic design in Melbourne or Sydney? OZlume provides expert design solutions for marketing materials, digital assets, and print collateral. Our Australian designers deliver clean, impactful designs that drive results for your business.',
       benefits: [
         'Custom design for any medium',
         'Print and digital formats',
@@ -132,12 +131,12 @@ const ServicePage = () => {
         'Ongoing design support'
       ],
       process: [
-        'Brief: Understanding your design needs and objectives',
-        'Concepts: Initial design directions',
-        'Refinement: Perfecting the details',
-        'Final Delivery: All formats ready to use'
+        'Brief: Understanding your design needs and business objectives',
+        'Concepts: Initial design directions tailored to your brand',
+        'Refinement: Perfecting every detail',
+        'Final Delivery: All formats ready for print and digital use'
       ],
-      pricing: 'Custom pricing',
+      pricing: 'Contact for Custom Offer',
       deliverables: [
         'Brochures and flyers',
         'Business cards and stationery',
@@ -148,26 +147,26 @@ const ServicePage = () => {
       ]
     },
     'web-development': {
-      title: 'Website Design & Development',
-      tagline: 'Fast, beautiful, conversion-focused',
-      description: 'Modern, responsive websites built for growth. We combine stunning design with clean code to create websites that not only look amazing but drive real business results.',
+      title: 'Web Design Sydney & Melbourne | Shopify Development',
+      tagline: 'Custom Websites & Shopify Stores for Australian Businesses',
+      description: 'Looking for web design in Sydney or Melbourne? OZlume builds modern, responsive websites and Shopify stores that drive growth for Australian businesses. We combine stunning design with clean code for websites that look amazing and convert visitors into customers. Expert Shopify store development Australia.',
       benefits: [
         'Mobile-first responsive design',
         'Lightning-fast performance',
         'SEO-optimized structure',
         'Easy content management',
-        'Secure and scalable',
+        'Shopify & ecommerce expertise',
         '6 months support included'
       ],
       process: [
-        'Planning: Site structure, features, and user experience',
-        'Design: Custom designs aligned with your brand',
-        'Development: Clean, modern code',
-        'Launch: Testing, deployment, and training'
+        'Planning: Site structure, features, and user experience strategy',
+        'Design: Custom designs aligned with your Australian brand',
+        'Development: Clean, modern code built for performance',
+        'Launch: Testing, deployment, and training for your team'
       ],
-      pricing: 'Starting from $1,395',
+      pricing: 'Contact for Custom Offer',
       deliverables: [
-        'Custom responsive website',
+        'Custom responsive website or Shopify store',
         'Content management system',
         'Contact forms and integrations',
         'Google Analytics setup',
@@ -176,24 +175,24 @@ const ServicePage = () => {
       ]
     },
     'seo-performance': {
-      title: 'SEO & Performance Optimization',
-      tagline: 'Get found, load fast, convert better',
-      description: 'Technical optimization to ensure your website ranks well on Google and loads lightning-fast. Better visibility means more customers.',
+      title: 'SEO Services Australia | Search Engine Optimization',
+      tagline: 'Rank Higher on Google Across Australia',
+      description: 'Boost your Google rankings with OZlume\'s SEO services Australia. Our technical optimization ensures your website ranks well for Australian searches and loads lightning-fast. Serving businesses in Sydney, Melbourne, Brisbane, Perth, and nationwide. Better visibility means more Australian customers.',
       benefits: [
-        'Improved search rankings',
+        'Improved Google rankings',
         'Faster page load times',
         'Better user experience',
         'Higher conversion rates',
         'Mobile optimization',
-        'Ongoing monitoring'
+        'Ongoing monitoring & reporting'
       ],
       process: [
-        'Audit: Comprehensive technical analysis',
-        'Strategy: Prioritized optimization roadmap',
-        'Implementation: Technical fixes and improvements',
-        'Monitoring: Ongoing tracking and reporting'
+        'Audit: Comprehensive technical SEO analysis',
+        'Strategy: Prioritized optimization roadmap for Australian market',
+        'Implementation: Technical fixes and content improvements',
+        'Monitoring: Ongoing tracking and monthly reporting'
       ],
-      pricing: 'From $495/month',
+      pricing: 'Contact for Custom Offer',
       deliverables: [
         'Technical SEO audit',
         'On-page optimization',
@@ -204,24 +203,24 @@ const ServicePage = () => {
       ]
     },
     'digital-solutions': {
-      title: 'Digital & Creative Solutions',
-      tagline: 'End-to-end digital excellence',
-      description: 'Comprehensive digital solutions tailored to your business goals. From concept to execution, we handle everything your brand needs to succeed online.',
+      title: 'Digital Agency Australia | Full-Service Solutions',
+      tagline: 'End-to-End Digital Excellence for Australian Businesses',
+      description: 'OZlume is your full-service digital agency in Australia. From web development to digital marketing, we handle everything your brand needs to succeed online. Serving businesses across Melbourne, Sydney, Brisbane, Perth, and all of Australia with comprehensive digital solutions.',
       benefits: [
         'Holistic digital strategy',
         'Multi-channel approach',
-        'Custom solutions',
-        'Expert team',
+        'Custom Australian solutions',
+        'Expert local team',
         'Scalable systems',
         'Data-driven decisions'
       ],
       process: [
-        'Discovery: Understanding your business and goals',
+        'Discovery: Understanding your Australian business and goals',
         'Strategy: Creating a comprehensive digital roadmap',
-        'Execution: Implementing across all channels',
+        'Execution: Implementing across all digital channels',
         'Optimization: Continuous improvement based on data'
       ],
-      pricing: 'Custom pricing',
+      pricing: 'Contact for Custom Offer',
       deliverables: [
         'Digital strategy document',
         'Website and web applications',
