@@ -100,10 +100,10 @@ const Contact = () => {
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Ready to Elevate Your Brand?
+            Contact OZlume for a Free Quote
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            Let's discuss your project and how we can help you stand out.
+            Ready to elevate your Australian business? Get in touch for a free consultation on web design, logo design, branding, or SEO services.
           </p>
         </div>
 
