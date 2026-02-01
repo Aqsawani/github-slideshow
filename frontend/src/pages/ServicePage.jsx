@@ -663,6 +663,16 @@ const ServicePage = () => {
             Start Your Project
             <ArrowRight size={20} />
           </button>
+          
+          {/* Trust Signal */}
+          <p className="fade-in-up animate-delay-4" style={{
+            marginTop: '24px',
+            color: 'var(--text-secondary)',
+            fontSize: '0.9rem',
+            opacity: sectionsVisible.pricing ? 1 : 0
+          }}>
+            ✓ 120+ Happy Clients &nbsp;|&nbsp; ✓ 150+ Projects Delivered &nbsp;|&nbsp; ✓ 5 Years Experience
+          </p>
         </div>
       </section>
 
