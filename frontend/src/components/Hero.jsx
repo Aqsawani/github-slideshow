@@ -141,7 +141,7 @@ const Hero = () => {
           fontWeight: '600'
         }}>
           <Sparkles size={16} />
-          Premium Design & Digital Agency
+          #1 Digital Agency Australia | Melbourne & Sydney
         </div>
 
         {/* Main Headline */}
@@ -154,7 +154,7 @@ const Hero = () => {
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text'
         }}>
-          Building Brands That Stand Out and Scale
+          Web Design, Logo & Branding Agency Australia
         </h1>
 
         {/* Subheading */}
@@ -166,7 +166,7 @@ const Hero = () => {
           fontSize: '1.35rem',
           lineHeight: '1.6'
         }}>
-          Logo Design, Branding, Web Development & Digital Growth — The Aussie Way.
+          Logo Design, Brand Identity, Web Development, Shopify Stores & SEO — The Aussie Way.
         </p>
 
         {/* CTA Buttons */}
@@ -179,7 +179,7 @@ const Hero = () => {
         }}>
           <button className="btn-primary" onClick={() => scrollToSection('contact')}
             style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.05rem' }}>
-            Get a Quote
+            Get Free Quote
             <ArrowRight size={20} />
           </button>
           <a 
