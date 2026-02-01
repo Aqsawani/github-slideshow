@@ -1,13 +1,327 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- Primary Meta Tags -->
+        <title>OZlume | #1 Digital Agency Australia | Web Design Sydney & Melbourne</title>
+        <meta name="title" content="OZlume | #1 Digital Agency Australia | Web Design Sydney & Melbourne" />
+        <meta name="description" content="Award-winning digital agency in Australia. Expert logo design, brand identity, web development, Shopify stores & SEO services in Sydney & Melbourne. Get a free quote today!" />
+        <meta name="keywords" content="digital agency Australia, web design Sydney, graphic design Melbourne, Shopify store development Australia, logo design Australia, brand identity Melbourne, SEO services Australia, web development Sydney, Australian branding agency, ecommerce development Australia" />
+        <meta name="author" content="OZlume Digital Agency" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href="https://ozlume.com/" />
+        
+        <!-- Theme & Branding -->
         <meta name="theme-color" content="#00A3A8" />
-        <meta name="description" content="OZlume - Melbourne-based creative agency specializing in logo design, brand identity, web development, and SEO. Elevating Brands The OZ Way." />
-        <meta name="keywords" content="logo design, brand identity, web development, SEO, Melbourne, Australia, OZlume, branding agency" />
-        <link rel="icon" href="/images/ozilum-logo.png" />
-        <title>OZlume | Elevating Brands The OZ Way</title>
+        <meta name="msapplication-TileColor" content="#00A3A8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="OZlume" />
+        
+        <!-- Geographic Meta Tags -->
+        <meta name="geo.region" content="AU-VIC" />
+        <meta name="geo.placename" content="Melbourne" />
+        <meta name="geo.position" content="-37.8136;144.9631" />
+        <meta name="ICBM" content="-37.8136, 144.9631" />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ozlume.com/" />
+        <meta property="og:title" content="OZlume | Australia's Premier Digital Agency | Web Design & Branding" />
+        <meta property="og:description" content="Transform your brand with Australia's leading digital agency. Expert web design, logo creation, Shopify development & SEO services in Sydney & Melbourne. Free consultation!" />
+        <meta property="og:image" content="https://ozlume.com/images/ozilum-logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_AU" />
+        <meta property="og:site_name" content="OZlume Digital Agency" />
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://ozlume.com/" />
+        <meta name="twitter:title" content="OZlume | #1 Digital Agency Australia | Web Design & Branding" />
+        <meta name="twitter:description" content="Award-winning digital agency. Logo design, web development, Shopify stores & SEO in Sydney & Melbourne. Get your free quote!" />
+        <meta name="twitter:image" content="https://ozlume.com/images/ozilum-logo.png" />
+        
+        <!-- Favicon & Icons -->
+        <link rel="icon" type="image/png" href="/images/ozilum-logo.png" />
+        <link rel="apple-touch-icon" href="/images/ozilum-logo.png" />
+        <link rel="manifest" href="/manifest.json" />
+        
+        <!-- Preconnect for Performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        
+        <!-- Structured Data - Organization -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "OZlume",
+            "alternateName": "OZlume Digital Agency",
+            "url": "https://ozlume.com",
+            "logo": "https://ozlume.com/images/ozilum-logo.png",
+            "description": "Australia's premier digital agency specializing in logo design, brand identity, web development, Shopify store development, and SEO services.",
+            "foundingDate": "2020",
+            "founders": [{
+                "@type": "Person",
+                "name": "OZlume Team"
+            }],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Melbourne",
+                "addressRegion": "VIC",
+                "addressCountry": "AU"
+            },
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "+61-452-039-863",
+                "contactType": "customer service",
+                "email": "contact@ozlume.com",
+                "areaServed": ["AU", "Sydney", "Melbourne", "Brisbane", "Perth"],
+                "availableLanguage": ["English"]
+            }],
+            "sameAs": [
+                "https://www.instagram.com/ozlumeau"
+            ],
+            "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -37.8136,
+                    "longitude": 144.9631
+                },
+                "geoRadius": "5000000"
+            }
+        }
+        </script>
+        
+        <!-- Structured Data - Local Business -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://ozlume.com/#localbusiness",
+            "name": "OZlume Digital Agency",
+            "image": "https://ozlume.com/images/ozilum-logo.png",
+            "description": "Melbourne's leading digital agency offering web design, logo design, brand identity, Shopify development, and SEO services across Australia.",
+            "url": "https://ozlume.com",
+            "telephone": "+61452039863",
+            "email": "contact@ozlume.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Melbourne",
+                "addressRegion": "Victoria",
+                "addressCountry": "Australia"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -37.8136,
+                "longitude": 144.9631
+            },
+            "priceRange": "$$",
+            "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "120",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "areaServed": ["Melbourne", "Sydney", "Brisbane", "Perth", "Adelaide", "Australia"]
+        }
+        </script>
+        
+        <!-- Structured Data - Services -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Digital Marketing and Design Services",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "OZlume Digital Agency"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "Australia"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Digital Agency Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Logo Design Australia",
+                            "description": "Professional logo design services for Australian businesses. Custom, memorable logos that elevate your brand."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Web Design Sydney & Melbourne",
+                            "description": "Custom responsive web design and development for businesses across Sydney, Melbourne, and Australia."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Shopify Store Development Australia",
+                            "description": "Expert Shopify ecommerce store development and customization for Australian online retailers."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Brand Identity Melbourne",
+                            "description": "Complete brand identity design including logo, colors, typography, and brand guidelines."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "SEO Services Australia",
+                            "description": "Search engine optimization to help Australian businesses rank higher on Google."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Graphic Design Melbourne",
+                            "description": "Professional graphic design services for marketing materials, social media, and print."
+                        }
+                    }
+                ]
+            }
+        }
+        </script>
+        
+        <!-- Structured Data - Reviews/Testimonials -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "OZlume - Digital Agency Australia",
+            "description": "Australia's premier digital agency for web design, logo design, and branding",
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "laluna_traci"
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "reviewBody": "I am so happy with the end results, was a pleasure to work with. They understood exactly what I was looking for and created a fantastic logo beyond my expectations. Just perfect.",
+                    "datePublished": "2024-01-25"
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "daviromi"
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "reviewBody": "OZlume delivered an impressive logo design and website that surpassed my expectations. The process was swift and effortless, reflecting their professionalism and design expertise. Highly Recommended!",
+                    "datePublished": "2023-01-25"
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "prestige_sydney"
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "reviewBody": "I highly recommend OZlume, they've been amazing to work with. Their service and communication to help me with my website has been amazing. Really happy with their work.",
+                    "datePublished": "2025-01-20"
+                }
+            ]
+        }
+        </script>
+        
+        <!-- Structured Data - FAQ -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What services does OZlume offer?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OZlume offers comprehensive digital services including logo design, brand identity, web design & development, Shopify store development, SEO optimization, and graphic design for businesses across Australia."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Where is OZlume located?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OZlume is a Melbourne-based digital agency serving clients across Australia including Sydney, Brisbane, Perth, and Adelaide. We work with clients remotely nationwide."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does web design cost in Australia?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Web design costs vary based on project requirements. Contact OZlume for a custom quote tailored to your specific needs and budget. We offer flexible pricing for all business sizes."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you develop Shopify stores?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes! OZlume specializes in Shopify store development for Australian ecommerce businesses. We create custom, conversion-optimized online stores that drive sales."
+                    }
+                }
+            ]
+        }
+        </script>
+        
+        <!-- Structured Data - Breadcrumb -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ozlume.com/"
+            }]
+        }
+        </script>
+        
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
