@@ -10,7 +10,7 @@ const WelcomePopup = () => {
   useEffect(() => {
     const seen = sessionStorage.getItem('ozlume_popup_seen');
     if (!seen) {
-      const timer = setTimeout(() => setShow(true), 2500);
+      const timer = setTimeout(() => setShow(true), 10000);
       return () => clearTimeout(timer);
     }
   }, []);

@@ -62,12 +62,12 @@ const CustomCursor = () => {
       <div ref={dotRef} style={{
         position: 'fixed', top: 0, left: 0, width: '6px', height: '6px',
         background: 'var(--brand-primary)', borderRadius: '50%',
-        pointerEvents: 'none', zIndex: 10000, willChange: 'transform'
+        pointerEvents: 'none', zIndex: 12000, willChange: 'transform'
       }} />
       <div ref={ringRef} style={{
         position: 'fixed', top: 0, left: 0, width: '36px', height: '36px',
         border: '1.5px solid rgba(0, 163, 168, 0.5)', borderRadius: '50%',
-        pointerEvents: 'none', zIndex: 9999, willChange: 'transform',
+        pointerEvents: 'none', zIndex: 11999, willChange: 'transform',
         transition: 'transform 0.08s linear, border-color 0.2s'
       }} />
       <style>{`@media (min-width: 768px) { * { cursor: none !important; } }`}</style>
