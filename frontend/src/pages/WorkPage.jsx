@@ -1,38 +1,53 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Instagram, ArrowRight, ExternalLink } from 'lucide-react';
+import { Instagram, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
     image: '/projects/floras-botanicals.png',
     title: "Flora's Botanicals",
-    category: 'Brand Identity & Packaging',
-    description: 'Complete brand identity and packaging design for a premium botanicals company.'
+    category: 'Brand Identity & Packaging'
   },
   {
     image: '/projects/gnomish-press.png',
     title: 'Gnomish Press',
-    category: 'Logo Design',
-    description: 'Custom logo design with multiple variations for a publishing company.'
+    category: 'Logo Design'
   },
   {
-    image: '/projects/basic-bricks.png',
-    title: 'Basic Bricks',
-    category: 'Logo Design',
-    description: 'Hand-crafted logo concept for a construction and building company.'
+    image: '/projects/novaflow.jpg',
+    title: 'NovaFlow',
+    category: 'Web App Design'
+  },
+  {
+    image: '/projects/sharpstyle.jpg',
+    title: 'SharpStyle Barbershop',
+    category: 'Web Development'
+  },
+  {
+    image: '/projects/home-rental.jpg',
+    title: 'Home Rental Platform',
+    category: 'Web Development'
+  },
+  {
+    image: '/projects/nexora-consulting.jpg',
+    title: 'Nexora Consulting',
+    category: 'Web Design'
+  },
+  {
+    image: '/projects/four-seagulls.jpg',
+    title: 'Four Seagulls Beach House',
+    category: 'Brand Identity'
   },
   {
     image: '/projects/logo-collection-1.png',
     title: 'Logo Collection',
-    category: 'Logo Design',
-    description: 'Custom logos for Bubbles & Mo, God Life Smoothies, Rent A Buggy, and ONI Helmets.'
+    category: 'Logo Design'
   },
   {
     image: '/projects/logo-collection-2.png',
     title: 'Brand Showcase',
-    category: 'Logo & Branding',
-    description: 'Designs for Sunnyside Dental Care, AMT Landscape Services, Skeleton Crew, and more.'
+    category: 'Logo & Branding'
   }
 ];
 
@@ -83,12 +98,12 @@ const WorkPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section data-testid="projects-grid" style={{ padding: '60px 40px 80px' }}>
+      <section data-testid="projects-grid" style={{ padding: '60px 40px 40px' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '32px'
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '24px'
           }}>
             {projects.map((project, index) => (
               <div
@@ -97,10 +112,9 @@ const WorkPage = () => {
                 style={{
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border-medium)',
-                  borderRadius: '20px',
+                  borderRadius: '16px',
                   overflow: 'hidden',
-                  transition: 'all 0.3s ease',
-                  cursor: 'default'
+                  transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-6px)';
@@ -113,10 +127,9 @@ const WorkPage = () => {
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                {/* Image */}
                 <div style={{
                   width: '100%',
-                  height: '300px',
+                  height: '260px',
                   overflow: 'hidden',
                   position: 'relative'
                 }}>
@@ -133,35 +146,49 @@ const WorkPage = () => {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   />
-                  {/* Category Badge */}
                   <div style={{
-                    position: 'absolute', top: '16px', left: '16px',
-                    padding: '6px 14px', background: 'rgba(0, 0, 0, 0.7)',
+                    position: 'absolute', top: '12px', left: '12px',
+                    padding: '5px 12px', background: 'rgba(0, 0, 0, 0.7)',
                     backdropFilter: 'blur(8px)',
-                    borderRadius: '50px', fontSize: '0.75rem',
+                    borderRadius: '50px', fontSize: '0.7rem',
                     color: 'var(--brand-primary)', fontWeight: '600'
                   }}>
                     {project.category}
                   </div>
                 </div>
-
-                {/* Content */}
-                <div style={{ padding: '24px' }}>
+                <div style={{ padding: '16px 20px' }}>
                   <h3 style={{
-                    fontSize: '1.2rem', fontWeight: '700',
-                    color: '#FFFFFF', marginBottom: '8px'
+                    fontSize: '1.05rem', fontWeight: '600',
+                    color: '#FFFFFF', margin: 0
                   }}>
                     {project.title}
                   </h3>
-                  <p style={{
-                    color: 'var(--text-secondary)', fontSize: '0.9rem',
-                    lineHeight: '1.6', margin: 0
-                  }}>
-                    {project.description}
-                  </p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Instagram CTA - right below the photos */}
+          <div data-testid="instagram-cta" style={{
+            textAlign: 'center',
+            marginTop: '48px',
+            paddingBottom: '20px'
+          }}>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="see-more-instagram-btn"
+              className="btn-primary"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '10px',
+                fontSize: '1.05rem', padding: '1.1em 2.2em', textDecoration: 'none'
+              }}
+            >
+              <Instagram size={20} />
+              See More Projects on Instagram
+              <ExternalLink size={16} />
+            </a>
           </div>
         </div>
       </section>
@@ -194,46 +221,16 @@ const WorkPage = () => {
         </div>
       </section>
 
-      {/* Instagram CTA */}
-      <section data-testid="instagram-cta" style={{
-        padding: '80px 40px',
-        textAlign: 'center'
-      }}>
-        <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <Instagram size={40} color="var(--brand-primary)" style={{ marginBottom: '20px' }} />
-          <h2 style={{
-            fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: '700',
-            color: '#FFFFFF', marginBottom: '16px'
-          }}>
-            Follow Us on Instagram
-          </h2>
-          <p style={{
-            color: 'var(--text-secondary)', fontSize: '1.1rem',
-            marginBottom: '32px', maxWidth: '500px', margin: '0 auto 32px'
-          }}>
-            See our latest projects, behind-the-scenes, and design inspiration on Instagram.
-          </p>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="see-more-instagram-btn"
-            className="btn-primary"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              fontSize: '1.05rem', padding: '1.2em 2.5em', textDecoration: 'none'
-            }}
-          >
-            See More Projects on Instagram <ExternalLink size={18} />
-          </a>
-        </div>
-      </section>
-
       <Footer />
 
       <style>{`
-        @media (max-width: 767px) {
-          [data-testid="projects-grid"] > div > div {
+        @media (max-width: 900px) {
+          [data-testid="projects-grid"] > div > div:first-child {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 600px) {
+          [data-testid="projects-grid"] > div > div:first-child {
             grid-template-columns: 1fr !important;
           }
         }
