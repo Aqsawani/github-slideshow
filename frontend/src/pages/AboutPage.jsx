@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Users, MapPin } from 'lucide-react';
+import { Users, MapPin, Lightbulb, Heart, Target } from 'lucide-react';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const AboutPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section style={{
+      <section data-testid="about-hero" style={{
         paddingTop: '100px',
         paddingBottom: '30px',
         position: 'relative',
@@ -30,11 +30,11 @@ const AboutPage = () => {
               marginBottom: '24px'
             }}>
               <span style={{ color: 'var(--brand-primary)', fontSize: '0.9rem', fontWeight: '500' }}>
-                ✦ About Us
+                About Us
               </span>
             </div>
             
-            <h1 style={{
+            <h1 data-testid="about-title" style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: '800',
               color: 'var(--text-primary)',
@@ -51,13 +51,13 @@ const AboutPage = () => {
               margin: '0 auto',
               lineHeight: '1.6'
             }}>
-              A passionate team of designers and developers building brands that stand out and scale.
+              A creative design agency helping businesses build strong, memorable brands.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
+      {/* Location Bar */}
       <section style={{ padding: '50px 0', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{
@@ -67,19 +67,11 @@ const AboutPage = () => {
             gap: '60px',
             flexWrap: 'wrap'
           }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '16px'
-            }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div style={{
-                width: '60px',
-                height: '60px',
-                borderRadius: '50%',
+                width: '60px', height: '60px', borderRadius: '50%',
                 background: 'rgba(0, 163, 168, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>
                 <MapPin size={28} color="var(--brand-primary)" />
               </div>
@@ -89,19 +81,11 @@ const AboutPage = () => {
               </div>
             </div>
 
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '16px'
-            }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div style={{
-                width: '60px',
-                height: '60px',
-                borderRadius: '50%',
+                width: '60px', height: '60px', borderRadius: '50%',
                 background: 'rgba(0, 163, 168, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>
                 <Users size={28} color="var(--brand-primary)" />
               </div>
@@ -114,14 +98,14 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section style={{ padding: '80px 0' }}>
+      {/* Who We Are */}
+      <section data-testid="about-who-we-are" style={{ padding: '80px 0' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: '60px',
-            alignItems: 'center'
+            alignItems: 'start'
           }}>
             <div>
               <h2 style={{
@@ -130,7 +114,7 @@ const AboutPage = () => {
                 color: 'var(--text-primary)',
                 marginBottom: '24px'
               }}>
-                Our <span style={{ color: 'var(--brand-primary)' }}>Story</span>
+                Who We <span style={{ color: 'var(--brand-primary)' }}>Are</span>
               </h2>
               <p style={{
                 color: 'var(--text-secondary)',
@@ -138,81 +122,54 @@ const AboutPage = () => {
                 lineHeight: '1.8',
                 marginBottom: '20px'
               }}>
-                OZlume is a Melbourne-based creative agency founded with a simple mission: to help businesses 
-                elevate their brand presence in the digital world.
-              </p>
-              <p style={{
-                color: 'var(--text-secondary)',
-                fontSize: '1.1rem',
-                lineHeight: '1.8',
-                marginBottom: '20px'
-              }}>
-                Our team of 5 talented designers and developers brings together diverse expertise in 
-                logo design, brand identity, web development, and digital marketing. We believe that 
-                great design is not just about aesthetics—it's about creating meaningful connections 
-                between brands and their audiences.
+                OZlume is a Melbourne-based creative agency with a team of 5 designers and developers 
+                who are passionate about building brands that stand out.
               </p>
               <p style={{
                 color: 'var(--text-secondary)',
                 fontSize: '1.1rem',
                 lineHeight: '1.8'
               }}>
-                From startups to established businesses, we've helped clients across Australia build 
-                brands that truly stand out and scale.
+                We work with startups, small businesses, and growing companies to create logos, 
+                brand identities, websites, and digital experiences that connect with their audience 
+                and drive real results.
               </p>
             </div>
 
-            {/* Decorative Card */}
-            <div style={{
-              background: 'linear-gradient(135deg, rgba(0, 163, 168, 0.1) 0%, rgba(0, 163, 168, 0.05) 100%)',
-              border: '1px solid rgba(0, 163, 168, 0.2)',
-              borderRadius: '24px',
-              padding: '50px',
-              position: 'relative',
-              overflow: 'hidden'
-            }}>
-              <div style={{
-                position: 'absolute',
-                top: '-50px',
-                right: '-50px',
-                width: '200px',
-                height: '200px',
-                background: 'radial-gradient(circle, rgba(0, 163, 168, 0.2) 0%, transparent 70%)',
-                borderRadius: '50%'
-              }}></div>
-              
-              <h3 style={{
-                fontSize: '1.5rem',
+            <div>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
                 fontWeight: '700',
-                color: 'var(--brand-primary)',
-                marginBottom: '30px'
+                color: 'var(--text-primary)',
+                marginBottom: '24px'
               }}>
-                Why "OZlume"?
-              </h3>
+                What We <span style={{ color: 'var(--brand-primary)' }}>Do</span>
+              </h2>
               <p style={{
                 color: 'var(--text-secondary)',
                 fontSize: '1.1rem',
                 lineHeight: '1.8',
                 marginBottom: '20px'
               }}>
-                <strong style={{ color: 'var(--text-primary)' }}>OZ</strong> represents our Australian roots 
-                and pride in being a local agency.
+                From logo design and brand strategy to web development and SEO, we offer a complete 
+                range of creative and digital services. Every project starts with understanding your 
+                business, your goals, and your audience.
               </p>
               <p style={{
                 color: 'var(--text-secondary)',
                 fontSize: '1.1rem',
                 lineHeight: '1.8'
               }}>
-                <strong style={{ color: 'var(--text-primary)' }}>LUME</strong> (from "illuminate") reflects 
-                our mission to bring light and clarity to your brand's vision.
+                We don't believe in one-size-fits-all solutions. Each brand we work with gets a 
+                custom approach tailored to their specific needs and vision.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section style={{ padding: '80px 0', background: 'var(--bg-card)' }}>
+      {/* Our Approach */}
+      <section data-testid="about-approach" style={{ padding: '80px 0', background: 'var(--bg-card)' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <h2 style={{
@@ -221,8 +178,16 @@ const AboutPage = () => {
               color: 'var(--text-primary)',
               marginBottom: '16px'
             }}>
-              Our <span style={{ color: 'var(--brand-primary)' }}>Values</span>
+              Our <span style={{ color: 'var(--brand-primary)' }}>Approach</span>
             </h2>
+            <p style={{
+              color: 'var(--text-secondary)',
+              fontSize: '1.1rem',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              We focus on quality, creativity, and clear communication at every step.
+            </p>
           </div>
 
           <div style={{
@@ -231,12 +196,25 @@ const AboutPage = () => {
             gap: '32px'
           }}>
             {[
-              { title: 'Quality First', description: 'We never compromise on the quality of our work. Every pixel matters.' },
-              { title: 'Client Partnership', description: 'We work alongside you, not just for you. Your success is our success.' },
-              { title: 'Innovation', description: 'We stay ahead of trends to deliver modern, future-proof solutions.' }
+              { 
+                icon: <Lightbulb size={28} color="var(--brand-primary)" />,
+                title: 'Creative Thinking', 
+                description: 'We approach every project with fresh ideas and creative solutions that make your brand memorable.' 
+              },
+              { 
+                icon: <Heart size={28} color="var(--brand-primary)" />,
+                title: 'Quality First', 
+                description: 'We never rush or cut corners. Every detail matters, from concept to final delivery.' 
+              },
+              { 
+                icon: <Target size={28} color="var(--brand-primary)" />,
+                title: 'Results Focused', 
+                description: 'Great design should do more than look good — it should help your business grow and succeed.' 
+              }
             ].map((value, index) => (
               <div
                 key={index}
+                data-testid={`approach-card-${index}`}
                 style={{
                   padding: '40px',
                   background: 'var(--bg-page)',
@@ -253,13 +231,9 @@ const AboutPage = () => {
                   e.currentTarget.style.borderColor = 'rgba(0, 163, 168, 0.2)';
                 }}
               >
-                <div style={{
-                  width: '50px',
-                  height: '4px',
-                  background: 'var(--brand-primary)',
-                  borderRadius: '2px',
-                  marginBottom: '20px'
-                }}></div>
+                <div style={{ marginBottom: '20px' }}>
+                  {value.icon}
+                </div>
                 <h3 style={{
                   color: 'var(--text-primary)',
                   fontSize: '1.25rem',

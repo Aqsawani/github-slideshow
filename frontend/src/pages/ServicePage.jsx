@@ -321,10 +321,7 @@ const ServicePage = () => {
           
           <h1 className="heading-1 fade-in-up" style={{ 
             marginBottom: '20px',
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #00A3A8 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            color: '#FFFFFF'
           }}>
             {service.title}
           </h1>

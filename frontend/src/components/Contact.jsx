@@ -103,7 +103,7 @@ const Contact = () => {
             Contact OZlume for a Free Quote
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            Ready to elevate your Australian business? Get in touch for a free consultation on web design, logo design, branding, or SEO services.
+            Ready to elevate your brand? Get in touch for a free consultation on graphic design, logo design, branding, or web design.
           </p>
         </div>
 

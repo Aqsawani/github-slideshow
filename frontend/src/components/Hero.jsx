@@ -141,20 +141,17 @@ const Hero = () => {
           fontWeight: '600'
         }}>
           <Sparkles size={16} />
-          #1 Digital Agency Australia | Melbourne & Sydney
+          Design & Branding Agency
         </div>
 
         {/* Main Headline */}
         <h1 className="brand-display fade-in-up" style={{
           marginBottom: '32px',
-          maxWidth: '1000px',
+          maxWidth: '900px',
           margin: '0 auto 32px',
-          background: 'linear-gradient(135deg, #FFFFFF 0%, #00A3A8 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text'
+          color: '#FFFFFF'
         }}>
-          Web Design, Logo & Branding Agency Australia
+          Creative Design That Helps Your Brand Stand Out
         </h1>
 
         {/* Subheading */}
@@ -166,7 +163,7 @@ const Hero = () => {
           fontSize: '1.35rem',
           lineHeight: '1.6'
         }}>
-          Logo Design, Brand Identity, Web Development, Shopify Stores & SEO — The Aussie Way.
+          Logo Design, Brand Identity, Web Development & SEO — Simple, Smart Design for Growing Brands.
         </p>
 
         {/* CTA Buttons */}

@@ -135,10 +135,13 @@ const WorkPage = () => {
               overflow: 'hidden',
               background: 'var(--bg-page)',
               padding: '20px',
-              minHeight: '400px'
+              minHeight: '400px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-            <div data-behold-id="ZxGiAOZX6jUflSBAaBx7"></div>
+            <div data-behold-id="ZxGiAOZX6jUflSBAaBx7" style={{ width: '100%' }}></div>
           </div>
         </div>
       </section>

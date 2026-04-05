@@ -165,7 +165,7 @@ const Clients = () => {
           
           {/* More of our work button */}
           <a
-            href="https://www.instagram.com/aqsalogoz_"
+            href="https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
