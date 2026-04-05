@@ -148,6 +148,11 @@ const Header = () => {
             FAQ
           </button>
 
+          <button onClick={() => navTo('/client-login')} className="nav-link" data-testid="nav-client-login"
+            style={{ background: 'none', border: 'none', padding: '8px 16px', color: isActive('/client-login') ? 'var(--brand-primary)' : 'var(--text-secondary)', fontWeight: isActive('/client-login') ? '600' : '400', cursor: 'pointer', fontSize: '0.9rem', transition: 'color 0.3s ease' }}>
+            Client Login
+          </button>
+
           <button onClick={() => navTo('/contact')} className="btn-primary" data-testid="nav-contact-btn"
             style={{ marginLeft: '12px', padding: '10px 24px', fontSize: '0.85rem' }}>
             Get a Quote
@@ -181,6 +186,7 @@ const Header = () => {
         <button onClick={() => navTo('/work')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>Work</button>
         <button onClick={() => navTo('/about')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>About</button>
         <button onClick={() => navTo('/faq')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>FAQ</button>
+        <button onClick={() => navTo('/client-login')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>Client Login</button>
         <button onClick={() => navTo('/contact')} className="btn-primary" style={{ marginTop: '16px', textAlign: 'center', fontSize: '0.95rem' }}>Get a Quote</button>
       </div>
 

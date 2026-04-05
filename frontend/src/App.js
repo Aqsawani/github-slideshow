@@ -8,8 +8,10 @@ import AboutPage from './pages/AboutPage';
 import WorkPage from './pages/WorkPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
+import ClientLoginPage from './pages/ClientLoginPage';
 import TopBanner from './components/TopBanner';
 import CustomCursor from './components/CustomCursor';
+import WhatsAppButton from './components/WhatsAppButton';
 import './App.css';
 
 function App() {
@@ -26,7 +28,9 @@ function App() {
         <Route path="/work" element={<WorkPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route path="/client-login" element={<ClientLoginPage />} />
       </Routes>
+      <WhatsAppButton />
     </Router>
   );
 }

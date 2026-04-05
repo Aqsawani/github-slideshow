@@ -120,6 +120,16 @@ const Footer = () => {
                   SEO & Performance
                 </a>
               </li>
+              <li>
+                <a 
+                  onClick={(e) => { e.preventDefault(); navigate('/client-login'); window.scrollTo(0, 0); }}
+                  className="nav-link"
+                  data-testid="footer-client-login"
+                  style={{ padding: 0, cursor: 'pointer' }}
+                >
+                  Client Login
+                </a>
+              </li>
             </ul>
           </div>
 
