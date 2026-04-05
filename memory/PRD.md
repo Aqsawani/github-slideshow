@@ -1,153 +1,136 @@
 # OZlume Agency Website - Product Requirements Document
 
 ## Original Problem Statement
-Build a modern, professional agency website for "OZlume" - a design and branding agency based in Melbourne, Australia. The website should showcase services, establish brand identity, and generate client inquiries through a functional contact form.
+Build a modern, professional agency website for "OZlume" - a design and branding agency based in Melbourne, Australia. The website should showcase services, establish brand identity, and generate client inquiries through functional contact forms.
 
 ## Brand Details
 - **Company Name:** OZlume
 - **Tagline:** "Elevating Brands - The OZ Way"
-- **Color Palette:**
-  - Primary: Teal `#00A3A8`
-  - Text Primary: White `#FFFFFF`
-  - Text Secondary: Light Gray `#b0b0b0`
-  - Background: Dark `#0a0b0a`
-  - Card Background: `#1a1d1b`
+- **Primary Color:** Teal `#00A3A8`
 - **Contact Email:** contact@ozlume.com.au
 - **WhatsApp:** 0452 039 863
 - **Instagram:** @ozlumeau
-
-## Target Audience
-- Businesses seeking branding, logo design, and web development services
-- Startups and growing companies looking for professional creative agency services
+- **Location:** Melbourne, Australia
 
 ## Architecture
 
-### Frontend
-- **Framework:** React with React Router
-- **Styling:** TailwindCSS + Custom CSS (App.css with CSS variables)
-- **Key Patterns:** Glass-morphism, scroll animations, IntersectionObserver
-
-### Backend
-- **Framework:** FastAPI
-- **Database:** MongoDB (configured, used for contact form storage)
-- **Email:** Resend API for contact form notifications
+### Frontend: React + TailwindCSS + Custom CSS
+### Backend: FastAPI + MongoDB
+### Email: Resend API
 
 ### File Structure
 ```
 /app
 ├── backend/
-│   ├── server.py          # FastAPI endpoints, Resend integration
+│   ├── server.py
 │   ├── requirements.txt
-│   ├── .env               # MONGO_URL, DB_NAME, RESEND_API_KEY, etc.
-│   └── tests/
-│       └── test_ozlume_api.py
+│   ├── .env
+│   └── tests/test_ozlume_api.py
 └── frontend/
     ├── public/
-    │   ├── clients/       # Client logos (12 images)
-    │   ├── images/
-    │   │   └── ozilum-logo.png
-    │   ├── index.html     # SEO optimized meta tags
-    │   ├── manifest.json
-    │   ├── robots.txt
-    │   └── sitemap.xml
+    │   ├── clients/, images/
+    │   ├── index.html, manifest.json, robots.txt, sitemap.xml
     └── src/
         ├── components/
-        │   ├── Header.jsx
-        │   ├── Footer.jsx       # Clean, no flags
-        │   ├── Hero.jsx         # "Creative Design That Helps Your Brand Stand Out"
+        │   ├── Header.jsx        # Fixed nav with dropdown, below TopBanner
+        │   ├── TopBanner.jsx     # Fixed CTA banner at very top
+        │   ├── Hero.jsx
         │   ├── Services.jsx
         │   ├── WhyChoose.jsx
         │   ├── Process.jsx
+        │   ├── FutureDesign.jsx  # Animated tool icons section
+        │   ├── CustomCursor.jsx  # Teal dot + ring cursor
         │   ├── PortfolioCTA.jsx
         │   ├── Clients.jsx
         │   ├── Testimonials.jsx
-        │   └── Contact.jsx      # With WhatsApp field, connected to backend
+        │   ├── Contact.jsx
+        │   └── Footer.jsx
         ├── pages/
         │   ├── HomePage.jsx
-        │   ├── ServicePage.jsx  # No pricing, "Get Free Quote" CTA
-        │   ├── AboutPage.jsx    # Who We Are, What We Do, Our Approach
-        │   └── WorkPage.jsx     # Behold.so Instagram widget
-        ├── App.css
-        └── App.js
+        │   ├── ServicesListPage.jsx  # /services
+        │   ├── ServicePage.jsx       # /services/:serviceId
+        │   ├── ContactPage.jsx       # /contact
+        │   ├── FAQPage.jsx           # /faq
+        │   ├── AboutPage.jsx         # /about
+        │   └── WorkPage.jsx          # /work
+        ├── App.js, App.css, index.js, index.css
 ```
 
-## Completed Features
+## Pages & Routes
+| Route | Page | Description |
+|---|---|---|
+| `/` | HomePage | Hero, Services, WhyChoose, Process, FutureDesign, Clients, Testimonials, Contact |
+| `/services` | ServicesListPage | All 6 services with detailed cards |
+| `/services/:id` | ServicePage | Individual service detail (no pricing) |
+| `/contact` | ContactPage | Contact form + info (email, WhatsApp, location) |
+| `/faq` | FAQPage | 16 FAQs in 5 categories, accordion-style |
+| `/about` | AboutPage | Who We Are, What We Do, Our Approach |
+| `/work` | WorkPage | Instagram feed via Behold.so |
 
-### Homepage
-- Hero with headline: "Creative Design That Helps Your Brand Stand Out"
-- Badge: "Design & Branding Agency"
-- Subheading: "Logo Design, Brand Identity, Web Development & SEO — Simple, Smart Design for Growing Brands."
-- Animated stats counters (50+ projects, 100% satisfaction, 5+ years)
-- Services grid with 6 service cards
-- Why Choose OZlume section with animated icons
+## Completed Features (All Tested ✓)
+
+### Structural
+- Multi-page architecture with React Router
+- Fixed TopBanner with CTA ("LET'S DESIGN SOLUTIONS TOGETHER!")
+- Fixed Header below banner with full navigation + Services dropdown
+- Custom cursor (teal dot + ring, hover effects, hidden on mobile)
+- Professional background images on all page hero sections
+
+### Homepage Sections
+- Hero: "Creative Design That Helps Your Brand Stand Out"
+- Services overview with "View All Services" button
+- Why Choose Us with animated icon cards
 - Our Process vertical timeline
-- Portfolio CTA linking to Instagram
-- Client logo carousel (12 logos, infinite scroll)
-- Testimonials section (3 real reviews)
-- Contact form with WhatsApp field
-- Clean footer with updated email
+- FutureDesign: "Leading the Future of Design..." with animated tool icons (Figma, React, Shopify, WordPress, etc.)
+- Clients logo carousel
+- Testimonials (3 reviews)
+- Contact form
 
-### Service Pages (6 total)
-- Logo Design, Brand Identity, Graphic Design, Web Development, SEO & Performance, Digital Solutions
-- No pricing displayed — "Message Us for a Custom Offer"
-- CTA: "Get Free Quote" button scrolling to contact form
+### Services
+- ServicesListPage with 6 detailed cards (icon, description, what's included)
+- Individual ServicePage for each service (no pricing, "Get Free Quote" CTA)
 
-### About Page
-- Hero: "We Are OZlume"
-- Location bar: Melbourne, Australia | 5 Creatives
-- "Who We Are" section
-- "What We Do" section
-- "Our Approach" section (Creative Thinking, Quality First, Results Focused)
+### Contact
+- Dedicated ContactPage with form + contact info
+- Form sends email via Resend to ejazhamza28@gmail.com
+- Homepage also has contact section
 
-### Work Page
-- Instagram feed via Behold.so widget (feed ID: ZxGiAOZX6jUflSBAaBx7)
-- Follow @ozlumeau button
-- Stats section (150+ Projects, 120+ Clients, 5 Years)
-
-### Contact Form
-- Backend POST /api/contact endpoint
-- Stores in MongoDB
-- Email via Resend to ejazhamza28@gmail.com
-- Fields: name, email, whatsapp, company (optional), message
-
-### Footer
-- Clean layout, no flags, no country-specific wording
-- Text: "Creative design and branding services" / "Helping businesses grow through design"
-- Email: contact@ozlume.com.au
-- WhatsApp: 0452 039 863
-- Instagram only social icon
-
-### Technical SEO
-- Meta title: "OZlume | Graphic Design, Logo Design & Branding | Melbourne Web Design Agency"
-- Keywords: graphic design, logo design, branding, web design, Melbourne
-- Open Graph and Twitter Card meta tags
-- Structured data: Organization, Local Business, Services, Reviews, FAQ, Breadcrumb
-- sitemap.xml, robots.txt, manifest.json
-- Canonical URL, geo meta tags
+### FAQ
+- 5 categories: Services, Pricing, Process, Timelines, Revisions
+- 16 accordion-style questions with smooth open/close
 
 ### Design
-- Modern, elegant, minimal aesthetic
-- White headings (not teal), clean typography
-- No uppercase headings or buttons
-- Glass-morphism effects
-- Scroll-triggered animations
-- Responsive mobile layout
+- Modern, minimal dark theme with teal accents
+- White headings, clean typography (no uppercase)
+- Glass-morphism, scroll animations
+- Mobile responsive with hamburger menu
 
-## 3rd Party Integrations
-- **Resend** — Email delivery for contact form (API key in backend .env)
-- **Behold.so** — Instagram feed embed on Work page
+### SEO
+- Meta title/description with keywords (graphic design, logo design, branding, web design, Melbourne)
+- Open Graph, Twitter Card meta tags
+- Structured data (Organization, LocalBusiness, Services, Reviews, FAQ, Breadcrumb)
+- sitemap.xml, robots.txt, manifest.json
+
+### Footer
+- Clean layout, no flags
+- "Creative design and branding services" / "Helping businesses grow through design"
+- Email: contact@ozlume.com.au, WhatsApp, Instagram
 
 ## API Endpoints
 - `GET /api/` — Health check
-- `POST /api/contact` — Contact form submission
+- `POST /api/contact` — Contact form {name, email, whatsapp, company, message}
 - `GET /api/status` — Status checks
 - `POST /api/status` — Create status check
 
-## Backlog / Future Tasks
+## 3rd Party Integrations
+- Resend (email delivery)
+- Behold.so (Instagram feed widget)
+
+## Backlog
 - P2: Production deployment
-- P2: Verify Behold.so Instagram feed loads actual images (may be account/config issue)
+- P2: Verify Behold.so Instagram feed in real browser
+- P3: Blog section
 - P3: Additional testimonials
-- P3: Blog section (if requested)
 
 ## Last Updated
-April 5, 2026 — Major design refresh, content updates, SEO improvements
+April 5, 2026 — Major restructuring: separate pages, TopBanner, FutureDesign, CustomCursor, FAQ page, Contact page, Services listing page
