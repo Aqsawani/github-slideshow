@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [counters, setCounters] = useState({
     projects: 0,
     satisfaction: 0,
@@ -85,7 +87,7 @@ const Hero = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '120px 40px 80px',
+      padding: '160px 40px 80px',
       position: 'relative',
       overflow: 'hidden',
       width: '100%'
@@ -174,20 +176,20 @@ const Hero = () => {
           flexWrap: 'wrap',
           marginBottom: '80px'
         }}>
-          <button className="btn-primary" onClick={() => scrollToSection('contact')}
+          <button className="btn-primary" onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+            data-testid="hero-cta-btn"
             style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.05rem' }}>
             Get Free Quote
             <ArrowRight size={20} />
           </button>
-          <a 
-            href="https://www.instagram.com/ozlumeau?igsh=MWZydmI3Ync5MWlzZA%3D%3D&utm_source=qr" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-secondary" 
-            style={{ fontSize: '1.05rem', textDecoration: 'none', display: 'inline-block' }}
+          <button
+            onClick={() => { navigate('/work'); window.scrollTo(0, 0); }}
+            className="btn-secondary"
+            data-testid="hero-work-btn"
+            style={{ fontSize: '1.05rem', border: 'none', cursor: 'pointer' }}
           >
             View Our Work
-          </a>
+          </button>
         </div>
 
         {/* Animated Stats */}

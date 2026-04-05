@@ -254,7 +254,7 @@ const ServicePage = () => {
       {/* Hero Section */}
       <section ref={heroRef} className={`scroll-reveal ${sectionsVisible.hero ? 'visible' : ''}`} style={{
         background: 'var(--gradient-dark)',
-        padding: '140px 40px 80px',
+        padding: '180px 40px 80px',
         borderBottom: '1px solid var(--border-medium)',
         position: 'relative',
         overflow: 'hidden'

@@ -14,7 +14,7 @@ const AboutPage = () => {
       
       {/* Hero Section */}
       <section data-testid="about-hero" style={{
-        paddingTop: '100px',
+        paddingTop: '160px',
         paddingBottom: '30px',
         position: 'relative',
         overflow: 'hidden'

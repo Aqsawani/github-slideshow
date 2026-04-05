@@ -1,156 +1,193 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    setMobileMenuOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsServicesOpen(false);
       }
-    }
-  };
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
 
-  const handleNavigation = (path) => {
-    setMobileMenuOpen(false);
+  const services = [
+    { name: 'Logo Design', slug: 'logo-design' },
+    { name: 'Brand Identity', slug: 'brand-identity' },
+    { name: 'Graphic Design', slug: 'graphic-design' },
+    { name: 'Web Development', slug: 'web-development' },
+    { name: 'SEO & Performance', slug: 'seo-performance' },
+    { name: 'Digital Solutions', slug: 'digital-solutions' }
+  ];
+
+  const navTo = (path) => {
     navigate(path);
     window.scrollTo(0, 0);
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
   };
 
-  const goToHome = () => {
-    setMobileMenuOpen(false);
-    navigate('/');
-    window.scrollTo(0, 0);
-  };
+  const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/');
 
   return (
-    <header style={{
+    <header data-testid="header" style={{
       position: 'fixed',
-      top: 0,
+      top: '56px',
       left: 0,
       right: 0,
-      background: scrolled ? 'rgba(26, 28, 27, 0.98)' : 'rgba(26, 28, 27, 0.95)',
-      backdropFilter: 'blur(10px)',
       zIndex: 1000,
-      borderBottom: scrolled ? '1px solid rgba(0, 163, 168, 0.3)' : '1px solid var(--border-medium)',
       transition: 'all 0.3s ease',
-      boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.3)' : 'none'
+      background: isScrolled ? 'rgba(10, 11, 10, 0.95)' : 'rgba(10, 11, 10, 0.7)',
+      backdropFilter: 'blur(16px)',
+      WebkitBackdropFilter: 'blur(16px)',
+      borderBottom: isScrolled ? '1px solid var(--border-medium)' : '1px solid transparent'
     }}>
-      <nav className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: scrolled ? '10px 40px' : '15px 40px',
+      <div style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        transition: 'padding 0.3s ease'
+        padding: '0 40px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        height: '70px'
       }}>
         {/* Logo */}
-        <img 
-          src="/images/ozilum-logo.png" 
-          alt="OZlume - Elevating Brands The OZ Way"
-          onClick={goToHome}
-          data-testid="header-logo"
-          style={{
-            height: scrolled ? '45px' : '55px',
-            width: 'auto',
-            cursor: 'pointer',
-            transition: 'height 0.3s ease, filter 0.3s ease',
-            filter: 'drop-shadow(0 0 6px rgba(0, 163, 168, 0.3))'
-          }}
-        />
-
-        {/* Desktop Navigation */}
-        <div style={{
-          display: 'flex',
-          gap: '32px',
-          alignItems: 'center'
-        }} className="desktop-nav">
-          <a href="#services" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a>
-          <a href="/work" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/work'); }}>Work</a>
-          <a href="/about" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/about'); }}>About</a>
-          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
-          <button className="btn-primary" onClick={() => scrollToSection('contact')}
-            style={{ padding: '0.75em 1.5em', fontSize: '0.9rem' }}>
-            Get a Quote
-          </button>
+        <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={() => navTo('/')}>
+          <img 
+            src="/images/ozilum-logo.png" 
+            alt="OZlume - Creative Design Agency"
+            data-testid="header-logo"
+            style={{
+              height: '48px',
+              width: 'auto',
+              filter: 'drop-shadow(0 0 6px rgba(0, 163, 168, 0.25))'
+            }}
+          />
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Desktop Nav */}
+        <nav data-testid="desktop-nav" style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}>
+          <button onClick={() => navTo('/')} className="nav-link" data-testid="nav-home"
+            style={{ background: 'none', border: 'none', padding: '8px 16px', color: location.pathname === '/' ? 'var(--brand-primary)' : 'var(--text-secondary)', fontWeight: location.pathname === '/' ? '600' : '400', cursor: 'pointer', fontSize: '0.9rem', transition: 'color 0.3s ease' }}>
+            Home
+          </button>
+
+          {/* Services Dropdown */}
+          <div ref={dropdownRef} style={{ position: 'relative' }}>
+            <button 
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="nav-link" data-testid="nav-services"
+              style={{ background: 'none', border: 'none', padding: '8px 16px', color: isActive('/services') ? 'var(--brand-primary)' : 'var(--text-secondary)', fontWeight: isActive('/services') ? '600' : '400', cursor: 'pointer', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '4px', transition: 'color 0.3s ease' }}>
+              Services <ChevronDown size={14} style={{ transition: 'transform 0.3s', transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+            </button>
+            {isServicesOpen && (
+              <div data-testid="services-dropdown" style={{
+                position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)',
+                marginTop: '8px', minWidth: '220px',
+                background: 'rgba(26, 29, 27, 0.98)', backdropFilter: 'blur(20px)',
+                border: '1px solid var(--border-medium)', borderRadius: '12px',
+                padding: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+              }}>
+                <button onClick={() => navTo('/services')} style={{
+                  display: 'block', width: '100%', textAlign: 'left', padding: '10px 16px',
+                  background: 'none', border: 'none', color: 'var(--brand-primary)', fontSize: '0.85rem',
+                  fontWeight: '600', cursor: 'pointer', borderRadius: '8px', marginBottom: '4px',
+                  transition: 'background 0.2s'
+                }}
+                onMouseEnter={(e) => e.target.style.background = 'rgba(0, 163, 168, 0.1)'}
+                onMouseLeave={(e) => e.target.style.background = 'none'}>
+                  All Services
+                </button>
+                <div style={{ height: '1px', background: 'var(--border-medium)', margin: '4px 0' }} />
+                {services.map((s) => (
+                  <button key={s.slug} onClick={() => navTo(`/services/${s.slug}`)} style={{
+                    display: 'block', width: '100%', textAlign: 'left', padding: '10px 16px',
+                    background: 'none', border: 'none', color: 'var(--text-secondary)', fontSize: '0.85rem',
+                    cursor: 'pointer', borderRadius: '8px', transition: 'all 0.2s'
+                  }}
+                  onMouseEnter={(e) => { e.target.style.background = 'rgba(0, 163, 168, 0.1)'; e.target.style.color = '#FFFFFF'; }}
+                  onMouseLeave={(e) => { e.target.style.background = 'none'; e.target.style.color = 'var(--text-secondary)'; }}>
+                    {s.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button onClick={() => navTo('/work')} className="nav-link" data-testid="nav-work"
+            style={{ background: 'none', border: 'none', padding: '8px 16px', color: isActive('/work') ? 'var(--brand-primary)' : 'var(--text-secondary)', fontWeight: isActive('/work') ? '600' : '400', cursor: 'pointer', fontSize: '0.9rem', transition: 'color 0.3s ease' }}>
+            Work
+          </button>
+
+          <button onClick={() => navTo('/about')} className="nav-link" data-testid="nav-about"
+            style={{ background: 'none', border: 'none', padding: '8px 16px', color: isActive('/about') ? 'var(--brand-primary)' : 'var(--text-secondary)', fontWeight: isActive('/about') ? '600' : '400', cursor: 'pointer', fontSize: '0.9rem', transition: 'color 0.3s ease' }}>
+            About
+          </button>
+
+          <button onClick={() => navTo('/faq')} className="nav-link" data-testid="nav-faq"
+            style={{ background: 'none', border: 'none', padding: '8px 16px', color: isActive('/faq') ? 'var(--brand-primary)' : 'var(--text-secondary)', fontWeight: isActive('/faq') ? '600' : '400', cursor: 'pointer', fontSize: '0.9rem', transition: 'color 0.3s ease' }}>
+            FAQ
+          </button>
+
+          <button onClick={() => navTo('/contact')} className="btn-primary" data-testid="nav-contact-btn"
+            style={{ marginLeft: '12px', padding: '10px 24px', fontSize: '0.85rem' }}>
+            Get a Quote
+          </button>
+        </nav>
+
+        {/* Mobile Toggle */}
         <button
-          className="mobile-menu-btn"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          data-testid="mobile-menu-btn"
+          data-testid="mobile-menu-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           style={{
             display: 'none',
-            background: 'transparent',
-            border: 'none',
-            color: 'var(--brand-primary)',
-            cursor: 'pointer',
-            padding: '8px',
-            transition: 'transform 0.3s ease'
+            background: 'none', border: 'none', color: '#FFFFFF',
+            cursor: 'pointer', padding: '8px'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </nav>
+      </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="mobile-menu fade-in" data-testid="mobile-menu" style={{
-          display: 'none',
-          flexDirection: 'column',
-          gap: '16px',
-          padding: '20px 40px',
-          background: 'var(--bg-page)',
-          borderTop: '1px solid var(--border-medium)'
-        }}>
-          <a href="#services" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a>
-          <a href="/work" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/work'); }}>Work</a>
-          <a href="/about" className="nav-link" onClick={(e) => { e.preventDefault(); handleNavigation('/about'); }}>About</a>
-          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
-          <button className="btn-primary" onClick={() => scrollToSection('contact')}>
-            Get a Quote
-          </button>
-        </div>
-      )}
+      <div data-testid="mobile-menu" style={{
+        display: isMenuOpen ? 'flex' : 'none',
+        flexDirection: 'column',
+        padding: '16px 40px 32px',
+        background: 'rgba(10, 11, 10, 0.98)',
+        borderTop: '1px solid var(--border-medium)'
+      }}>
+        <button onClick={() => navTo('/')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>Home</button>
+        <button onClick={() => navTo('/services')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>Services</button>
+        <button onClick={() => navTo('/work')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>Work</button>
+        <button onClick={() => navTo('/about')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>About</button>
+        <button onClick={() => navTo('/faq')} style={{ background: 'none', border: 'none', padding: '14px 0', color: '#FFFFFF', fontSize: '1rem', cursor: 'pointer', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>FAQ</button>
+        <button onClick={() => navTo('/contact')} className="btn-primary" style={{ marginTop: '16px', textAlign: 'center', fontSize: '0.95rem' }}>Get a Quote</button>
+      </div>
 
       <style>{`
         @media (max-width: 767px) {
-          .desktop-nav {
-            display: none !important;
-          }
-          .mobile-menu-btn {
-            display: block !important;
-          }
-          .mobile-menu {
-            display: flex !important;
-          }
+          [data-testid="desktop-nav"] { display: none !important; }
+          [data-testid="mobile-menu-toggle"] { display: block !important; }
         }
       `}</style>
     </header>

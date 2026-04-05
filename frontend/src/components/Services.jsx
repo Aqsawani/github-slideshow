@@ -203,6 +203,39 @@ const Services = () => {
             </div>
           ))}
         </div>
+
+        {/* View All Services Button */}
+        <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <button
+            className="btn-secondary"
+            data-testid="view-all-services-btn"
+            onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '14px 32px',
+              background: 'transparent',
+              border: '1px solid var(--brand-primary)',
+              borderRadius: '50px',
+              color: 'var(--brand-primary)',
+              fontSize: '0.95rem',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(0, 163, 168, 0.1)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
+            View All Services →
+          </button>
+        </div>
       </div>
     </section>
   );

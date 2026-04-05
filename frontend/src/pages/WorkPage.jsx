@@ -29,7 +29,7 @@ const WorkPage = () => {
       
       {/* Hero Section */}
       <section style={{
-        paddingTop: '120px',
+        paddingTop: '160px',
         paddingBottom: '60px',
         position: 'relative',
         overflow: 'hidden'
