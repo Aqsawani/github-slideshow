@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Target, Zap, HeartHandshake } from 'lucide-react';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const WhyChoose = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -97,7 +98,7 @@ const WhyChoose = () => {
             Why Choose Us
           </div>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Why Choose OZlume
+            <AnimatedUnderline>Why Choose OZlume</AnimatedUnderline>
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
             We don't just deliver projects — we build partnerships.

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import AnimatedUnderline from '../components/AnimatedUnderline';
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -84,7 +85,7 @@ const ContactPage = () => {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800',
               color: '#FFFFFF', marginBottom: '24px', lineHeight: '1.1'
             }}>
-              Contact Us
+              <AnimatedUnderline>Contact Us</AnimatedUnderline>
             </h1>
             <p style={{
               fontSize: '1.25rem', color: 'var(--text-secondary)',

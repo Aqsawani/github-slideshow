@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Search, Pencil, Hammer, Rocket } from 'lucide-react';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const Process = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,7 +103,7 @@ const Process = () => {
             How We Work
           </div>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Our Process
+            <AnimatedUnderline>Our Process</AnimatedUnderline>
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
             Simple, professional, confidence-building.

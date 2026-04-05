@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const tools = [
   { name: 'Figma', svg: (
@@ -118,7 +119,7 @@ const FutureDesign = () => {
           maxWidth: '800px',
           margin: '0 auto 16px'
         }}>
-          Leading the Future of Design With Smart, Modern Technologies
+          Leading the Future of Design With <AnimatedUnderline>Smart, Modern Technologies</AnimatedUnderline>
         </h2>
 
         <p style={{

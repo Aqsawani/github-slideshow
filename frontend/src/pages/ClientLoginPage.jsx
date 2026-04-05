@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import AnimatedUnderline from '../components/AnimatedUnderline';
 import { Lock, Mail, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -62,7 +63,7 @@ const ClientLoginPage = () => {
             <h1 data-testid="client-login-title" style={{
               fontSize: '1.75rem', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px'
             }}>
-              Client Login
+              <AnimatedUnderline>Client Login</AnimatedUnderline>
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
               Access your project dashboard and files

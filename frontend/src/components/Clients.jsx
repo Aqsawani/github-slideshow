@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const Clients = () => {
   const clients = [
@@ -50,7 +51,7 @@ const Clients = () => {
             Trusted By
           </div>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Our Top Clients
+            <AnimatedUnderline>Our Top Clients</AnimatedUnderline>
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-secondary)' }}>
             Proud to work with industry-leading brands and innovative companies.

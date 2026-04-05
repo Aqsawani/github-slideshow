@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { toast } from 'sonner';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -100,7 +101,7 @@ const Contact = () => {
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Contact OZlume for a Free Quote
+            <AnimatedUnderline>Contact OZlume for a Free Quote</AnimatedUnderline>
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
             Ready to elevate your brand? Get in touch for a free consultation on graphic design, logo design, branding, or web design.

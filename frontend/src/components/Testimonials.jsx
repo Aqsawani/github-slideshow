@@ -1,5 +1,6 @@
 import React from 'react';
 import { Quote, Star, MapPin, CheckCircle } from 'lucide-react';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const Testimonials = () => {
   const reviews = [
@@ -47,7 +48,7 @@ const Testimonials = () => {
             </span>
           </div>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Trusted by Growing Brands
+            <AnimatedUnderline>Trusted by Growing Brands</AnimatedUnderline>
           </h2>
           <p className="body-medium" style={{ 
             color: 'var(--text-secondary)',

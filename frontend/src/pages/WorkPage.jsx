@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import AnimatedUnderline from '../components/AnimatedUnderline';
 import { Instagram, ExternalLink } from 'lucide-react';
 
 const projects = [
@@ -85,7 +86,7 @@ const WorkPage = () => {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800',
               color: '#FFFFFF', marginBottom: '24px', lineHeight: '1.1'
             }}>
-              See Our Work
+              <AnimatedUnderline>See Our Work</AnimatedUnderline>
             </h1>
             <p style={{
               fontSize: '1.25rem', color: 'var(--text-secondary)',

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Palette, Sparkles, Globe, TrendingUp, Code, Layers } from 'lucide-react';
+import AnimatedUnderline from './AnimatedUnderline';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -114,7 +115,7 @@ const Services = () => {
             What We Do
           </div>
           <h2 className="heading-2" style={{ marginBottom: '20px' }}>
-            Our Services
+            <AnimatedUnderline>Our Services</AnimatedUnderline>
           </h2>
           <p className="body-medium" style={{ maxWidth: '600px', margin: '0 auto' }}>
             Expert-led design and digital solutions for Australian businesses.

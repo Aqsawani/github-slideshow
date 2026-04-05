@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import AnimatedUnderline from '../components/AnimatedUnderline';
 import { Palette, Sparkles, Globe, TrendingUp, Code, Layers, ArrowRight, Check } from 'lucide-react';
 
 const ServicesListPage = () => {
@@ -85,7 +86,7 @@ const ServicesListPage = () => {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800',
               color: '#FFFFFF', marginBottom: '24px', lineHeight: '1.1'
             }}>
-              Our Services
+              <AnimatedUnderline>Our Services</AnimatedUnderline>
             </h1>
             <p style={{
               fontSize: '1.25rem', color: 'var(--text-secondary)',

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import AnimatedUnderline from '../components/AnimatedUnderline';
 import { Users, MapPin, Lightbulb, Heart, Target } from 'lucide-react';
 
 const AboutPage = () => {
@@ -41,7 +42,7 @@ const AboutPage = () => {
               marginBottom: '24px',
               lineHeight: '1.1'
             }}>
-              We Are <span style={{ color: 'var(--brand-primary)' }}>OZlume</span>
+              We Are <span style={{ color: 'var(--brand-primary)' }}><AnimatedUnderline>OZlume</AnimatedUnderline></span>
             </h1>
             
             <p style={{
@@ -114,7 +115,7 @@ const AboutPage = () => {
                 color: 'var(--text-primary)',
                 marginBottom: '24px'
               }}>
-                Who We <span style={{ color: 'var(--brand-primary)' }}>Are</span>
+                Who We <span style={{ color: 'var(--brand-primary)' }}><AnimatedUnderline delay={0.1}>Are</AnimatedUnderline></span>
               </h2>
               <p style={{
                 color: 'var(--text-secondary)',
@@ -143,7 +144,7 @@ const AboutPage = () => {
                 color: 'var(--text-primary)',
                 marginBottom: '24px'
               }}>
-                What We <span style={{ color: 'var(--brand-primary)' }}>Do</span>
+                What We <span style={{ color: 'var(--brand-primary)' }}><AnimatedUnderline delay={0.1}>Do</AnimatedUnderline></span>
               </h2>
               <p style={{
                 color: 'var(--text-secondary)',
@@ -178,7 +179,7 @@ const AboutPage = () => {
               color: 'var(--text-primary)',
               marginBottom: '16px'
             }}>
-              Our <span style={{ color: 'var(--brand-primary)' }}>Approach</span>
+              Our <span style={{ color: 'var(--brand-primary)' }}><AnimatedUnderline>Approach</AnimatedUnderline></span>
             </h2>
             <p style={{
               color: 'var(--text-secondary)',
