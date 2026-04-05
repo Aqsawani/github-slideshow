@@ -10,7 +10,9 @@ const Hero = () => {
     experience: 0
   });
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [circleDrawn, setCircleDrawn] = useState(false);
   const statsRef = useRef(null);
+  const headlineRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -40,6 +42,14 @@ const Hero = () => {
       }
     };
   }, [hasAnimated]);
+
+  // Hand-drawn circle animation on scroll
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCircleDrawn(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const animateCounters = () => {
     const duration = 2000; // 2 seconds
@@ -153,7 +163,39 @@ const Hero = () => {
           margin: '0 auto 32px',
           color: '#FFFFFF'
         }}>
-          Creative Design That Helps Your Brand Stand Out
+          Creative Design That Helps Your Brand{' '}
+          <span style={{ position: 'relative', display: 'inline-block' }}>
+            Stand Out
+            <svg
+              className="hand-drawn-circle"
+              viewBox="0 0 280 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{
+                position: 'absolute',
+                left: '-12%',
+                top: '-25%',
+                width: '124%',
+                height: '150%',
+                pointerEvents: 'none',
+                overflow: 'visible'
+              }}
+            >
+              <path
+                d="M20 40C20 20 60 8 140 10C220 12 264 24 262 42C260 60 210 72 140 70C70 68 18 56 20 40Z"
+                stroke="#00A3A8"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                fill="none"
+                style={{
+                  strokeDasharray: 700,
+                  strokeDashoffset: circleDrawn ? 0 : 700,
+                  transition: 'stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  opacity: 0.75
+                }}
+              />
+            </svg>
+          </span>
         </h1>
 
         {/* Subheading */}

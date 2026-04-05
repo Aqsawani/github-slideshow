@@ -13,11 +13,13 @@ import TopBanner from './components/TopBanner';
 import CustomCursor from './components/CustomCursor';
 import WhatsAppButton from './components/WhatsAppButton';
 import WelcomePopup from './components/WelcomePopup';
+import BackgroundAnimations from './components/BackgroundAnimations';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <BackgroundAnimations />
       <CustomCursor />
       <TopBanner />
       <Toaster position="top-center" richColors />
