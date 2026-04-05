@@ -9,8 +9,56 @@ const Footer = () => {
     <footer data-testid="footer" style={{
       background: 'var(--bg-card)',
       borderTop: '1px solid var(--border-medium)',
-      padding: '60px 40px 40px'
+      padding: '60px 40px 40px',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
+      {/* Footer floating elements */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }} aria-hidden="true">
+        <svg style={{
+          position: 'absolute', top: '10%', right: '5%', width: '90px', height: '90px',
+          animation: 'ftFloat1 22s ease-in-out infinite', willChange: 'transform', opacity: 0.08
+        }}>
+          <circle cx="45" cy="45" r="38" stroke="#00A3A8" strokeWidth="1.2" fill="none" />
+        </svg>
+        <svg style={{
+          position: 'absolute', bottom: '15%', left: '4%', width: '60px', height: '60px',
+          animation: 'ftFloat2 18s ease-in-out infinite', willChange: 'transform', opacity: 0.07
+        }}>
+          <polygon points="30,5 55,52 5,52" stroke="#00A3A8" strokeWidth="1" fill="none" />
+        </svg>
+        <svg style={{
+          position: 'absolute', top: '30%', left: '35%', width: '45px', height: '45px',
+          animation: 'ftFloat1 26s ease-in-out infinite reverse', willChange: 'transform', opacity: 0.06
+        }}>
+          <rect x="5" y="5" width="35" height="35" rx="8" stroke="#00A3A8" strokeWidth="1" fill="none" />
+        </svg>
+        <svg style={{
+          position: 'absolute', bottom: '20%', right: '22%', width: '30px', height: '30px',
+          animation: 'ftFloat2 20s ease-in-out infinite', willChange: 'transform', opacity: 0.09
+        }}>
+          <line x1="15" y1="3" x2="15" y2="27" stroke="#00A3A8" strokeWidth="1.2" strokeLinecap="round" />
+          <line x1="3" y1="15" x2="27" y2="15" stroke="#00A3A8" strokeWidth="1.2" strokeLinecap="round" />
+        </svg>
+        <svg style={{
+          position: 'absolute', top: '50%', right: '42%', width: '50px', height: '50px',
+          animation: 'ftSpin 35s linear infinite', willChange: 'transform', opacity: 0.06
+        }}>
+          <polygon points="25,3 47,14 47,36 25,47 3,36 3,14" stroke="#00A3A8" strokeWidth="1" fill="none" />
+        </svg>
+        {[0,1,2].map(i => (
+          <div key={i} style={{
+            position: 'absolute',
+            top: `${20 + i * 30}%`,
+            left: `${60 + i * 12}%`,
+            width: '4px', height: '4px',
+            background: '#00A3A8', borderRadius: '50%',
+            opacity: 0.12,
+            animation: `ftPulse ${2.5 + i * 0.7}s ease-in-out infinite`,
+            animationDelay: `${i * 0.5}s`
+          }} />
+        ))}
+      </div>
       <div className="container" style={{
         maxWidth: '1400px',
         margin: '0 auto'
@@ -220,6 +268,23 @@ const Footer = () => {
       </div>
 
       <style>{`
+        @keyframes ftFloat1 {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(-12px, 10px); }
+          66% { transform: translate(8px, -14px); }
+        }
+        @keyframes ftFloat2 {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(14px, -10px); }
+        }
+        @keyframes ftSpin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes ftPulse {
+          0%, 100% { opacity: 0.08; transform: scale(1); }
+          50% { opacity: 0.22; transform: scale(1.6); }
+        }
         @media (max-width: 767px) {
           footer > div > div:last-child {
             flex-direction: column;
