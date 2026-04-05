@@ -26,6 +26,11 @@ const TopBanner = () => {
       borderBottom: '1px solid rgba(0, 163, 168, 0.2)',
       zIndex: 1001
     }}>
+      <style>{`
+        @media (max-width: 767px) {
+          [data-testid="top-banner"] { display: none !important; }
+        }
+      `}</style>
       <div style={{
         display: 'flex',
         alignItems: 'center',

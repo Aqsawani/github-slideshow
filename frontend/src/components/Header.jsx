@@ -194,6 +194,7 @@ const Header = () => {
         @media (max-width: 767px) {
           [data-testid="desktop-nav"] { display: none !important; }
           [data-testid="mobile-menu-toggle"] { display: block !important; }
+          [data-testid="header"] { top: 0 !important; }
         }
       `}</style>
     </header>
