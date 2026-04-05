@@ -62,7 +62,7 @@ const Hero = () => {
       projectStep++;
       setCounters(prev => ({
         ...prev,
-        projects: Math.min(Math.floor((50 / steps) * projectStep), 50)
+        projects: Math.min(Math.floor((180 / steps) * projectStep), 180)
       }));
       if (projectStep >= steps) clearInterval(projectInterval);
     }, stepDuration);

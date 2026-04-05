@@ -203,7 +203,7 @@ const WorkPage = () => {
             textAlign: 'center'
           }}>
             {[
-              { number: '150+', label: 'Projects Delivered' },
+              { number: '180+', label: 'Projects Delivered' },
               { number: '120+', label: 'Happy Clients' },
               { number: '5', label: 'Years Experience' },
               { number: '100%', label: 'Client Satisfaction' }
