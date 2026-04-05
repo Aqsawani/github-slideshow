@@ -12,6 +12,7 @@ import ClientLoginPage from './pages/ClientLoginPage';
 import TopBanner from './components/TopBanner';
 import CustomCursor from './components/CustomCursor';
 import WhatsAppButton from './components/WhatsAppButton';
+import WelcomePopup from './components/WelcomePopup';
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/client-login" element={<ClientLoginPage />} />
       </Routes>
       <WhatsAppButton />
+      <WelcomePopup />
     </Router>
   );
 }
